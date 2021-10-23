@@ -106,7 +106,8 @@
         <Reference Include="Xamarin.iOS" />
     </ItemGroup>
     <ItemGroup>
-        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
+        <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
+        <PackageReference Include="Xamarin.Forms.Maps" Version="5.0.0.2196" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\RayHelper\RayHelper.csproj">
