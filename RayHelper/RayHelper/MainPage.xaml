@@ -6,6 +6,8 @@
              x:Class="RayHelper.MainPage">
     
     <StackLayout>
+        <Label Text="Hello Man" HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"/>
         <maps:Map/>
         <StackLayout x:Name="NavigationPanel">
         </StackLayout>
