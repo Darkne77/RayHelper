@@ -3,13 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:RayHelper"
              xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
-             x:Class="RayHelper.MainPage">
+             xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="RayHelper.MainPage"
+             iOsSpecific:Page.UseSafeArea="True">
+    
+    <NavigationPage.TitleView>
+        <Label Text="Map View"/>
+    </NavigationPage.TitleView>
     
     <StackLayout>
-        <Label Text="Hello Man" HorizontalOptions="Center"
-               VerticalOptions="CenterAndExpand"/>
         <maps:Map/>
-        <StackLayout x:Name="NavigationPanel">
+        <StackLayout x:Name="NavigationPanel" Orientation="Horizontal">
             <Button Text="Bitton1"/>
             <Button Text="Bitton2"/>
             <Button Text="Bitton3"/>
