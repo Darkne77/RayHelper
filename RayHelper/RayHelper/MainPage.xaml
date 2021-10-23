@@ -6,17 +6,38 @@
              xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              x:Class="RayHelper.MainPage"
              iOsSpecific:Page.UseSafeArea="True">
+    <ContentPage.Resources>
+        <Style x:Key="NavigationPanelStyle" TargetType="StackLayout">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+        <Style x:Key="NavigateFrameStyle" TargetType="Frame">
+            <Setter Property="HasShadow" Value="True"/>
+            <Setter Property="CornerRadius" Value="5"/>
+        </Style>
+        <Style x:Key="TitleViewTextStyle" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
     
     <NavigationPage.TitleView>
-        <Label Text="Map View"/>
+        <Label Text="Map View" Style="{StaticResource TitleViewTextStyle}"/>
     </NavigationPage.TitleView>
     
     <StackLayout>
         <maps:Map/>
-        <StackLayout x:Name="NavigationPanel" Orientation="Horizontal">
-            <Button Text="Bitton1"/>
-            <Button Text="Bitton2"/>
-            <Button Text="Bitton3"/>
+        <StackLayout x:Name="NavigationPanel" Style="{StaticResource NavigationPanelStyle}">
+            <Frame Style="{StaticResource NavigateFrameStyle}">
+                <Button Text="Button1"/>
+            </Frame>
+            <Frame Style="{StaticResource NavigateFrameStyle}">
+                <Button Text="Button2"/>
+            </Frame>
+            <Frame Style="{StaticResource NavigateFrameStyle}">
+                <Button Text="Button3"/>
+            </Frame>
         </StackLayout>
     </StackLayout>
 
