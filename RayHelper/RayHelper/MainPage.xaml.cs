@@ -17,11 +17,6 @@ namespace RayHelper
             InitializeComponent();
             dataContext = new MapPageViewModel();
             BindingContext = dataContext;
-
-            var userLocation = dataContext.GetUserLocation().Result;
-            var position = new Position(userLocation.Latitude, userLocation.Longitude);
-            var mapSpan = MapSpan.FromCenterAndRadius(position, Distance.FromKilometers(1));
-            Map.MoveToRegion(mapSpan);
         }
 
         protected override void OnDisappearing()

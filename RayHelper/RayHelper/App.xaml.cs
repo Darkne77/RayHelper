@@ -13,6 +13,7 @@ namespace RayHelper
             InitializeComponent();
 
             //MainPage = new MainPage();
+            //Necessary for use NavigationPage.TitleView
             MainPage = new NavigationPage(new MainPage());
         }
 

@@ -2,36 +2,32 @@
 using System.Threading;
 using System.Threading.Tasks;
 using MvvmCross.Commands;
+using Xamarin.Essentials;
 
 namespace RayHelper.ViewModels
 {
-    using Xamarin.Essentials;
-    
     public class MapPageViewModel : MainViewModel
     {
         public CancellationTokenSource cts;
 
-        private MvxAsyncCommand getUserLocationCommand;
-
-        public MvxAsyncCommand GetUserLocationCommand
+        private Location userLocation;
+        public Location UserLocation
         {
-            get => getUserLocationCommand;
-            set => SetProperty(ref getUserLocationCommand, value);
+            get => userLocation;
+            set => SetProperty(ref userLocation, value);
         }
 
-        public MapPageViewModel()
+        public async Task GetUserLocation()
         {
-            getUserLocationCommand = new MvxAsyncCommand(GetUserLocation);
-        }
-        
-        public async Task<Location> GetUserLocation()
-        {
-            var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10));
-            cts = new CancellationTokenSource();
-            var location = new Location();
             try
             {
-                location = await Geolocation.GetLocationAsync(request, cts.Token);
+                var request = new GeolocationRequest(GeolocationAccuracy.Medium, TimeSpan.FromSeconds(10));
+                cts = new CancellationTokenSource();
+                var location = await Geolocation.GetLocationAsync(request, cts.Token);
+                if (location is not null)
+                {
+                    UserLocation = location;
+                }
                 Log.Add($"Latitude: {location.Latitude}, Longitude: {location.Longitude}, Altitude: {location.Altitude}");
             }
             catch (FeatureNotSupportedException fnsEx)
@@ -50,7 +46,6 @@ namespace RayHelper.ViewModels
             {
                 // Unable to get location
             }
-            return location;
         }
     }
 }
