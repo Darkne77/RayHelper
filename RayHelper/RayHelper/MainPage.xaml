@@ -27,7 +27,7 @@
     </NavigationPage.TitleView>
     
     <StackLayout>
-        <maps:Map/>
+        <maps:Map x:Name="Map" IsShowingUser="True"/>
         <StackLayout x:Name="NavigationPanel" Style="{StaticResource NavigationPanelStyle}">
             <Frame Style="{StaticResource NavigateFrameStyle}">
                 <Button Text="Button1"/>
