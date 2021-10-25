@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:RayHelper"
-             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
              xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:essentials="clr-namespace:Xamarin.Essentials;assembly=Xamarin.Essentials"
              x:Class="RayHelper.MainPage"
              iOsSpecific:Page.UseSafeArea="True">
     <ContentPage.Resources>
@@ -28,7 +28,6 @@
     </NavigationPage.TitleView>
     
     <StackLayout>
-        <maps:Map x:Name="Map" IsShowingUser="True"/>
         <StackLayout x:Name="NavigationPanel" Style="{StaticResource NavigationPanelStyle}">
             <Frame Style="{StaticResource NavigateFrameStyle}">
                 <Button Text="Button1"/>

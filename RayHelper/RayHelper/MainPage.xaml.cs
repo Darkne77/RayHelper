@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using RayHelper.ViewModels;
 using Xamarin.Forms;
-using Xamarin.Forms.Maps;
 
 namespace RayHelper
 {
