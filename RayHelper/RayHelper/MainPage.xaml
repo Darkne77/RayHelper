@@ -33,7 +33,7 @@
                 <Button Text="Button1"/>
             </Frame>
             <Frame Style="{StaticResource NavigateFrameStyle}">
-                <Button Text="Button2"/>
+                <Button Text="Button2" Command="{Binding OpenMapCommand}"/>
             </Frame>
             <Frame Style="{StaticResource NavigateFrameStyle}">
                 <Button Text="Button3"/>
