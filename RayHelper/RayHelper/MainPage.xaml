@@ -28,6 +28,15 @@
     </NavigationPage.TitleView>
     
     <StackLayout>
+        <ListView ItemsSource="{Binding Hospices}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding Name}"
+                        Detail="{Binding Address}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
         <StackLayout x:Name="NavigationPanel" Style="{StaticResource NavigationPanelStyle}">
             <Frame Style="{StaticResource NavigateFrameStyle}">
                 <Button Text="Button1"/>

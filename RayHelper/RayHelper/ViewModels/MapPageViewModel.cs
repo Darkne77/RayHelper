@@ -1,39 +1,52 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using MvvmCross.Commands;
+using RayHelper.Models;
 using Xamarin.Essentials;
 
 namespace RayHelper.ViewModels
 {
     public class MapPageViewModel : MainViewModel
     {
-        public CancellationTokenSource cts;
-
         public MapPageViewModel()
         {
-            OpenMapCommand = new MvxAsyncCommand(OpenMap);
+            OpenLocationOnMapCommand = new MvxAsyncCommand(OpenLocationOnMapAsync);
+
+            Hospices = new List<Hospice>
+            {
+                new Hospice()
+                {
+                    Name = "Приют, Бирюлёво Западное",
+                    City = "Москва",
+                    Street = "Харьковская улица",
+                    HouseNumber = "1к3",
+                    Latitude = 55.584126,
+                    Longitude = 37.653343
+                }
+            };
         }
 
-        private Location userLocation;
-        public Location UserLocation
+        private List<Hospice> hospices;
+        public List<Hospice> Hospices
         {
-            get => userLocation;
-            set => SetProperty(ref userLocation, value);
+            get => hospices;
+            set => SetProperty(ref hospices, value);
         }
 
-        private IMvxAsyncCommand openMapCommand;
+        private IMvxAsyncCommand openLocationOnMapCommand;
 
-        public IMvxAsyncCommand OpenMapCommand
+        public IMvxAsyncCommand OpenLocationOnMapCommand
         {
-            get => openMapCommand;
-            set => SetProperty(ref openMapCommand, value);
+            get => openLocationOnMapCommand;
+            set => SetProperty(ref openLocationOnMapCommand, value);
         }
 
-        private async Task OpenMap()
+        private async Task OpenLocationOnMapAsync()
         {
-            var location = new Location(47.645160, -122.1306032);
-            var options =  new MapLaunchOptions { Name = "Microsoft Building 25" };
+            var location = new Location(55.584126, 37.653343);
+            var options =  new MapLaunchOptions { Name = "Харьковская улица 1к3" };
 
             try
             {
