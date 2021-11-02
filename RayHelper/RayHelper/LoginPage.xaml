@@ -24,29 +24,23 @@
                        IsPassword="True"
                        Placeholder="Пароль"/>
             </StackLayout>
-            <Frame Style="{StaticResource CommonFrameStyle}"
-                   BackgroundColor="Orange"
-                   CornerRadius="10">
-                <Button Text="Войти"
-                        VerticalOptions="CenterAndExpand"
-                        HorizontalOptions="Center"
-                        HeightRequest="40"
-                        WidthRequest="300"
-                        Margin="10"
-                        BackgroundColor="Transparent"/>
-            </Frame>
-            <Frame Style="{StaticResource CommonFrameStyle}"
-                   BackgroundColor="LightGray"
-                   CornerRadius="10">
-                <Button Text="Войти без регистрации"
-                        VerticalOptions="CenterAndExpand"
-                        HorizontalOptions="Center"
-                        HeightRequest="40"
-                        WidthRequest="300"
-                        Margin="10"
-                        BackgroundColor="Transparent"
-                        Command="{Binding OpenMainPageCommand}"/>
-            </Frame>
+            <Button Text="Войти"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    HeightRequest="40"
+                    WidthRequest="300"
+                    Margin="10"
+                    CornerRadius="10"
+                    BackgroundColor="Orange"/>
+            <Button Text="Войти без регистрации"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    HeightRequest="40"
+                    WidthRequest="300"
+                    Margin="10"
+                    CornerRadius="10"
+                    BackgroundColor="LightGray"
+                    Command="{Binding OpenMainPageCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
