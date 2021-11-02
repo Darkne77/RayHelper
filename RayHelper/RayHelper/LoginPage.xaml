@@ -28,17 +28,23 @@
                    BackgroundColor="Orange"
                    CornerRadius="10">
                 <Button Text="Войти"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Center"
                         HeightRequest="40"
                         WidthRequest="300"
-                        Margin="10"/>
+                        Margin="10"
+                        BackgroundColor="Transparent"/>
             </Frame>
             <Frame Style="{StaticResource CommonFrameStyle}"
                    BackgroundColor="LightGray"
                    CornerRadius="10">
                 <Button Text="Войти без регистрации"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="Center"
                         HeightRequest="40"
                         WidthRequest="300"
                         Margin="10"
+                        BackgroundColor="Transparent"
                         Command="{Binding OpenMainPageCommand}"/>
             </Frame>
         </StackLayout>

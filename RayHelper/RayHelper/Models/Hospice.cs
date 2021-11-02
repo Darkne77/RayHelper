@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RayHelper.Models
+﻿namespace RayHelper.Models
 {
     public class Hospice
     {
@@ -11,7 +9,9 @@ namespace RayHelper.Models
         public string Street { get; set; }
         public string HouseNumber { get; set; }
         public string Metro { get; set; }
-        public string Address => string.IsNullOrWhiteSpace(Metro) ? $"{City}, {Street}, {HouseNumber}" 
+
+        public string Address => string.IsNullOrWhiteSpace(Metro)
+            ? $"{City}, {Street}, {HouseNumber}"
             : $"{City}, {Street}, {HouseNumber}, {Metro}";
     }
 }

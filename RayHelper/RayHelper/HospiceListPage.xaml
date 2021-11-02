@@ -50,22 +50,26 @@
                     <ImageButton HeightRequest="80"
                                  WidthRequest="80"
                                  Margin="10"
-                                 Source="help"
+                                 VerticalOptions="CenterAndExpand"
                                  HorizontalOptions="Center"
-                                 VerticalOptions="CenterAndExpand"/>
+                                 Source="help"/>
                 </Frame>
                 <Frame Style="{StaticResource CommonFrameStyle}">
                     <Button HeightRequest="80"
                             WidthRequest="80"
                             Margin="10"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="Center"
                             BackgroundColor="Red"
-                            Text="Button2" 
-                            Command="{Binding OpenMapCommand}"/>
+                            Text="Button2"
+                            Command="{Binding OpenLocationOnMapCommand}"/>
                 </Frame>
                 <Frame Style="{StaticResource CommonFrameStyle}">
                     <Button HeightRequest="80"
                             WidthRequest="80"
                             Margin="10"
+                            VerticalOptions="CenterAndExpand"
+                            HorizontalOptions="Center"
                             BackgroundColor="Yellow"
                             Text="Button3"/>
                 </Frame>
