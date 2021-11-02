@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RayHelper.LoginPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <StackLayout VerticalOptions="Center"
+                         HorizontalOptions="Center">
+                <Entry WidthRequest="300"
+                       ClearButtonVisibility="WhileEditing"
+                       IsSpellCheckEnabled="False"
+                       Placeholder="Логин (почта)"/>
+                <Entry WidthRequest="300"
+                       ClearButtonVisibility="WhileEditing"
+                       IsSpellCheckEnabled="False"
+                       IsPassword="True"
+                       Placeholder="Пароль"/>
+            </StackLayout>
+            <Frame Style="{StaticResource CommonFrameStyle}"
+                   BackgroundColor="Orange"
+                   CornerRadius="10">
+                <Button Text="Войти"
+                        HeightRequest="40"
+                        WidthRequest="300"
+                        Margin="10"/>
+            </Frame>
+            <Frame Style="{StaticResource CommonFrameStyle}"
+                   BackgroundColor="LightGray"
+                   CornerRadius="10">
+                <Button Text="Войти без регистрации"
+                        HeightRequest="40"
+                        WidthRequest="300"
+                        Margin="10"
+                        Command="{Binding OpenMainPageCommand}"/>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -10,11 +10,10 @@ namespace RayHelper
 {
     public partial class MainPage : ContentPage
     {
-        private readonly MapPageViewModel dataContext;
         public MainPage()
         {
             InitializeComponent();
-            dataContext = new MapPageViewModel();
+            var dataContext = new MapPageViewModel();
             BindingContext = dataContext;
         }
     }

@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:RayHelper"
+             xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:essentials="clr-namespace:Xamarin.Essentials;assembly=Xamarin.Essentials"
+             x:Class="RayHelper.MainPage"
+             iOsSpecific:Page.UseSafeArea="True">
+    <ContentPage.Resources>
+        <Style x:Key="NavigateFrameStyle" TargetType="Frame">
+            <Setter Property="HasShadow" Value="False"/>
+            <Setter Property="CornerRadius" Value="5"/>
+            <Setter Property="BorderColor" Value="LightGray"/>
+        </Style>
+        <Style x:Key="TitleViewTextStyle" TargetType="Label">
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="VerticalTextAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="CommonFrameStyle" TargetType="Frame">
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+            <Setter Property="HasShadow" Value="False"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+        <Style x:Key="CommonButtonStyle" TargetType="Button">
+        </Style>
+    </ContentPage.Resources>
+    
+    <NavigationPage.TitleView>
+        <Label Text="Список приютов" Style="{StaticResource TitleViewTextStyle}"/>
+    </NavigationPage.TitleView>
+    
+    <StackLayout>
+        <ListView ItemsSource="{Binding Hospices}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell
+                        Text="{Binding Name}"
+                        Detail="{Binding Address}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Frame Style="{StaticResource CommonFrameStyle}"
+               BorderColor="LightGray"
+               CornerRadius="10">
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         VerticalOptions="CenterAndExpand">
+                <Frame Style="{StaticResource CommonFrameStyle}">
+                    <ImageButton HeightRequest="80"
+                                 WidthRequest="80"
+                                 Margin="10"
+                                 Source="help"
+                                 HorizontalOptions="Center"
+                                 VerticalOptions="CenterAndExpand"/>
+                </Frame>
+                <Frame Style="{StaticResource CommonFrameStyle}">
+                    <Button HeightRequest="80"
+                            WidthRequest="80"
+                            Margin="10"
+                            BackgroundColor="Red"
+                            Text="Button2" 
+                            Command="{Binding OpenMapCommand}"/>
+                </Frame>
+                <Frame Style="{StaticResource CommonFrameStyle}">
+                    <Button HeightRequest="80"
+                            WidthRequest="80"
+                            Margin="10"
+                            BackgroundColor="Yellow"
+                            Text="Button3"/>
+                </Frame>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>
