@@ -17,12 +17,5 @@ namespace RayHelper
             dataContext = new MapPageViewModel();
             BindingContext = dataContext;
         }
-
-        protected override void OnDisappearing()
-        {
-            if (dataContext.cts != null && !dataContext.cts.IsCancellationRequested)
-                dataContext.cts.Cancel();
-            base.OnDisappearing();
-        }
     }
 }

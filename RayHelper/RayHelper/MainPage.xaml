@@ -38,15 +38,9 @@
             </ListView.ItemTemplate>
         </ListView>
         <StackLayout x:Name="NavigationPanel" Style="{StaticResource NavigationPanelStyle}">
-            <Frame Style="{StaticResource NavigateFrameStyle}">
-                <Button Text="Button1"/>
-            </Frame>
-            <Frame Style="{StaticResource NavigateFrameStyle}">
-                <Button Text="Button2" Command="{Binding OpenMapCommand}"/>
-            </Frame>
-            <Frame Style="{StaticResource NavigateFrameStyle}">
-                <Button Text="Button3"/>
-            </Frame>
+            <ImageButton Source="help.png"/>
+            <Button Text="Button2" Command="{Binding OpenMapCommand}"/>
+            <Button Text="Button3"/>
         </StackLayout>
     </StackLayout>
 
