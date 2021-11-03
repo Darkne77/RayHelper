@@ -7,9 +7,9 @@ using Xamarin.Essentials;
 
 namespace RayHelper.ViewModels
 {
-    public class MapPageViewModel : MainViewModel
+    public class HospiceListPageViewModel : MainViewModel
     {
-        public MapPageViewModel()
+        public HospiceListPageViewModel()
         {
             OpenLocationOnMapCommand = new MvxAsyncCommand(OpenLocationOnMapAsync);
             OpenHospiceProfileCommand = new MvxAsyncCommand<Hospice>(OpenHospiceProfileAsync);
