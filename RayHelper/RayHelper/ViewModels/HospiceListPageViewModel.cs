@@ -81,7 +81,7 @@ namespace RayHelper.ViewModels
 
         private async Task OpenHospiceProfileAsync(Hospice hospice)
         {
-            await Navigation.PushAsync(new HospiceProfilePage());
+            await Navigation.PushAsync(new HospiceProfilePage(hospice));
         }
 
         private async Task OpenLocationOnMapAsync()
