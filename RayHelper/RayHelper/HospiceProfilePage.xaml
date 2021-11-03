@@ -5,9 +5,15 @@
              x:Class="RayHelper.HospiceProfilePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Hello, world!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
+            <Button Text="Показать на карте"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="Center"
+                    HeightRequest="40"
+                    WidthRequest="300"
+                    Margin="10"
+                    CornerRadius="10"
+                    BackgroundColor="Red"
+                    Command="{Binding OpenLocationOnMapCommand}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

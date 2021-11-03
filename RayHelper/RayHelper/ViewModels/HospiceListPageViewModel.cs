@@ -11,7 +11,6 @@ namespace RayHelper.ViewModels
     {
         public HospiceListPageViewModel()
         {
-            OpenLocationOnMapCommand = new MvxAsyncCommand(OpenLocationOnMapAsync);
             OpenHospiceProfileCommand = new MvxAsyncCommand<Hospice>(OpenHospiceProfileAsync);
 
             Hospices = new List<Hospice>
@@ -63,14 +62,6 @@ namespace RayHelper.ViewModels
             set => SetProperty(ref hospices, value);
         }
 
-        private IMvxAsyncCommand openLocationOnMapCommand;
-
-        public IMvxAsyncCommand OpenLocationOnMapCommand
-        {
-            get => openLocationOnMapCommand;
-            set => SetProperty(ref openLocationOnMapCommand, value);
-        }
-        
         private IMvxAsyncCommand<Hospice> openHospiceProfileCommand;
 
         public IMvxAsyncCommand<Hospice> OpenHospiceProfileCommand
@@ -82,21 +73,6 @@ namespace RayHelper.ViewModels
         private async Task OpenHospiceProfileAsync(Hospice hospice)
         {
             await Navigation.PushAsync(new HospiceProfilePage(hospice));
-        }
-
-        private async Task OpenLocationOnMapAsync()
-        {
-            var location = new Location(55.584126, 37.653343);
-            var options =  new MapLaunchOptions { Name = "Харьковская улица 1к3" };
-
-            try
-            {
-                await Map.OpenAsync(location, options);
-            }
-            catch (Exception ex)
-            {
-                // No map application available to open
-            }
         }
     }
 }

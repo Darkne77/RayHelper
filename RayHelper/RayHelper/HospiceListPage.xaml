@@ -63,8 +63,7 @@
                             VerticalOptions="CenterAndExpand"
                             HorizontalOptions="Center"
                             BackgroundColor="Red"
-                            Text="Button2"
-                            Command="{Binding OpenLocationOnMapCommand}"/>
+                            Text="Button2"/>
                 </Frame>
                 <Frame Style="{StaticResource CommonFrameStyle}">
                     <Button HeightRequest="80"
