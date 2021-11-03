@@ -13,6 +13,7 @@ namespace RayHelper.ViewModels
         public MapPageViewModel()
         {
             OpenLocationOnMapCommand = new MvxAsyncCommand(OpenLocationOnMapAsync);
+            OpenHospiceProfileCommand = new MvxAsyncCommand<Hospice>(OpenHospiceProfileAsync);
 
             Hospices = new List<Hospice>
             {
@@ -69,6 +70,19 @@ namespace RayHelper.ViewModels
         {
             get => openLocationOnMapCommand;
             set => SetProperty(ref openLocationOnMapCommand, value);
+        }
+        
+        private IMvxAsyncCommand<Hospice> openHospiceProfileCommand;
+
+        public IMvxAsyncCommand<Hospice> OpenHospiceProfileCommand
+        {
+            get => openHospiceProfileCommand;
+            set => SetProperty(ref openHospiceProfileCommand, value);
+        }
+
+        private async Task OpenHospiceProfileAsync(Hospice hospice)
+        {
+            await Navigation.PushAsync(new HospiceProfilePage());
         }
 
         private async Task OpenLocationOnMapAsync()
