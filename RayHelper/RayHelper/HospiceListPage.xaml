@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:RayHelper"
              xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:essentials="clr-namespace:Xamarin.Essentials;assembly=Xamarin.Essentials"
-             x:Class="RayHelper.MainPage"
+             x:Class="RayHelper.HospiceListPage"
              iOsSpecific:Page.UseSafeArea="True">
     <ContentPage.Resources>
         <Style x:Key="NavigateFrameStyle" TargetType="Frame">

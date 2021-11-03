@@ -13,7 +13,8 @@ namespace RayHelper.ViewModels
 
         private async Task OpenMainPageAsync()
         {
-            Application.Current.MainPage = new NavigationPage(new MainPage());
+            //TODO Вынести в MainViewModel
+            Application.Current.MainPage = new NavigationPage(new HospiceListPage());
         }
 
         private IMvxAsyncCommand openMainPageCommand;

@@ -5,15 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using RayHelper.ViewModels;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace RayHelper
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class HospiceListPage : ContentPage
     {
-        public MainPage()
+        public HospiceListPage()
         {
             InitializeComponent();
-            var dataContext = new MapPageViewModel();
+            var dataContext = new HospiceListPageViewModel();
             BindingContext = dataContext;
         }
     }
