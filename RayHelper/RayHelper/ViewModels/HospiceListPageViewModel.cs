@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Threading.Tasks;
 using MvvmCross.Commands;
 using RayHelper.Models;
@@ -8,11 +7,12 @@ using Xamarin.Essentials;
 
 namespace RayHelper.ViewModels
 {
-    public class MapPageViewModel : MainViewModel
+    public class HospiceListPageViewModel : MainViewModel
     {
-        public MapPageViewModel()
+        public HospiceListPageViewModel()
         {
             OpenLocationOnMapCommand = new MvxAsyncCommand(OpenLocationOnMapAsync);
+            OpenHospiceProfileCommand = new MvxAsyncCommand<Hospice>(OpenHospiceProfileAsync);
 
             Hospices = new List<Hospice>
             {
@@ -69,6 +69,19 @@ namespace RayHelper.ViewModels
         {
             get => openLocationOnMapCommand;
             set => SetProperty(ref openLocationOnMapCommand, value);
+        }
+        
+        private IMvxAsyncCommand<Hospice> openHospiceProfileCommand;
+
+        public IMvxAsyncCommand<Hospice> OpenHospiceProfileCommand
+        {
+            get => openHospiceProfileCommand;
+            set => SetProperty(ref openHospiceProfileCommand, value);
+        }
+
+        private async Task OpenHospiceProfileAsync(Hospice hospice)
+        {
+            await Navigation.PushAsync(new HospiceProfilePage(hospice));
         }
 
         private async Task OpenLocationOnMapAsync()

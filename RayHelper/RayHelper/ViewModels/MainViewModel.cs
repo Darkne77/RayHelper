@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using MvvmCross.ViewModels;
+using Xamarin.Forms;
 
 namespace RayHelper.ViewModels
 {
@@ -11,10 +12,18 @@ namespace RayHelper.ViewModels
             get => log;
             set => SetProperty(ref log, value);
         }
+        
+        private INavigation navigation;
+        public INavigation Navigation
+        {
+            get => navigation;
+            set => SetProperty(ref navigation, value);
+        }
 
         public MainViewModel()
         {
-            log = new List<string>();
+            Log = new List<string>();
+            Navigation = Application.Current.MainPage.Navigation;
         }
     }
 }

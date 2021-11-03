@@ -31,12 +31,14 @@
     </NavigationPage.TitleView>
     
     <StackLayout>
-        <ListView ItemsSource="{Binding Hospices}">
+        <ListView x:Name="HospiceList" ItemsSource="{Binding Hospices}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell
                         Text="{Binding Name}"
-                        Detail="{Binding Address}"/>
+                        Detail="{Binding Address}"
+                        Command="{Binding Source={x:Reference Name=HospiceList}, Path=BindingContext.OpenHospiceProfileCommand}"
+                        CommandParameter="{Binding Source={RelativeSource Self}, Path=BindingContext}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
