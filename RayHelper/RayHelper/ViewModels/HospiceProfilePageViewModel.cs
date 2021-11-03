@@ -8,27 +8,26 @@ namespace RayHelper.ViewModels
 {
     public class HospiceProfilePageViewModel : MainViewModel
     {
-        public Hospice Hospice { get; set; }
+        private readonly Hospice _hospice;
         
         public HospiceProfilePageViewModel(Hospice hospice)
         {
-            Hospice = hospice;
+            _hospice = hospice;
             
             OpenLocationOnMapCommand = new MvxAsyncCommand(OpenLocationOnMapAsync);
         }
         
-        private IMvxAsyncCommand openLocationOnMapCommand;
-
+        private IMvxAsyncCommand _openLocationOnMapCommand;
         public IMvxAsyncCommand OpenLocationOnMapCommand
         {
-            get => openLocationOnMapCommand;
-            set => SetProperty(ref openLocationOnMapCommand, value);
+            get => _openLocationOnMapCommand;
+            set => SetProperty(ref _openLocationOnMapCommand, value);
         }
         
         private async Task OpenLocationOnMapAsync()
         {
-            var location = new Location(Hospice.Latitude, Hospice.Longitude);
-            var options =  new MapLaunchOptions { Name = Hospice.Name };
+            var location = new Location(_hospice.Latitude, _hospice.Longitude);
+            var options =  new MapLaunchOptions { Name = _hospice.Name };
 
             try
             {
