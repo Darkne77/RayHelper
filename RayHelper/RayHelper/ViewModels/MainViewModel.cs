@@ -12,20 +12,12 @@ namespace RayHelper.ViewModels
             get => log;
             set => SetProperty(ref log, value);
         }
-        
-        private INavigation navigation;
-        public INavigation Navigation
-        {
-            get => navigation;
-            set => SetProperty(ref navigation, value);
-        }
 
         public INavigation Navigation => Application.Current.MainPage.Navigation;
 
         public MainViewModel()
         {
             Log = new List<string>();
-            Navigation = Application.Current.MainPage.Navigation;
         }
     }
 }

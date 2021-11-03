@@ -15,7 +15,7 @@ namespace RayHelper
         public HospiceListPage()
         {
             InitializeComponent();
-            var dataContext = new HospiceListPageViewModel();
+            var dataContext = new MapPageViewModel();
             BindingContext = dataContext;
         }
     }
