@@ -73,7 +73,8 @@
                             VerticalOptions="CenterAndExpand"
                             HorizontalOptions="Center"
                             BackgroundColor="Yellow"
-                            Text="Button3"/>
+                            Text="Button3"
+                            Command="{Binding Source={x:Reference Name=HospiceList}, Path=BindingContext.OpenUserProfileCommand}"/>
                 </Frame>
             </StackLayout>
         </Frame>
