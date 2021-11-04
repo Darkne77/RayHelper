@@ -7,23 +7,22 @@
              x:Class="RayHelper.HospiceListPage"
              iOsSpecific:Page.UseSafeArea="True">
     <ContentPage.Resources>
-        <Style x:Key="NavigateFrameStyle" TargetType="Frame">
-            <Setter Property="HasShadow" Value="False"/>
-            <Setter Property="CornerRadius" Value="5"/>
-            <Setter Property="BorderColor" Value="LightGray"/>
-        </Style>
-        <Style x:Key="TitleViewTextStyle" TargetType="Label">
-            <Setter Property="HorizontalTextAlignment" Value="Center"/>
-            <Setter Property="VerticalTextAlignment" Value="Center"/>
-        </Style>
-        <Style x:Key="CommonFrameStyle" TargetType="Frame">
-            <Setter Property="HorizontalOptions" Value="Center"/>
-            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
-            <Setter Property="HasShadow" Value="False"/>
-            <Setter Property="Padding" Value="0"/>
-        </Style>
-        <Style x:Key="CommonButtonStyle" TargetType="Button">
-        </Style>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <Style x:Key="NavigateFrameStyle" TargetType="Frame">
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="BorderColor" Value="LightGray"/>
+            </Style>
+            <Style x:Key="TitleViewTextStyle" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
+            <Style x:Key="CommonButtonStyle" TargetType="Button">
+            </Style>
+        </ResourceDictionary>
     </ContentPage.Resources>
     
     <NavigationPage.TitleView>
@@ -42,7 +41,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Frame Style="{StaticResource CommonFrameStyle}"
+        <Frame x:Name="NavigationPanel" Style="{StaticResource CommonFrameStyle}"
                BorderColor="LightGray"
                CornerRadius="10">
             <StackLayout Orientation="Horizontal"
@@ -55,7 +54,7 @@
                                  VerticalOptions="CenterAndExpand"
                                  HorizontalOptions="Center"
                                  Source="help"
-                                 Command="{Binding Source={x:Reference Name=HospiceList}, Path=BindingContext.OpenRayProfileCommand}"/>
+                                 Command="{Binding Source={x:Reference Name=NavigationPanel}, Path=BindingContext.OpenRayProfileCommand}"/>
                 </Frame>
                 <Frame Style="{StaticResource CommonFrameStyle}">
                     <Button HeightRequest="80"
@@ -74,7 +73,7 @@
                             HorizontalOptions="Center"
                             BackgroundColor="Yellow"
                             Text="Button3"
-                            Command="{Binding Source={x:Reference Name=HospiceList}, Path=BindingContext.OpenUserProfileCommand}"/>
+                            Command="{Binding Source={x:Reference Name=NavigationPanel}, Path=BindingContext.OpenUserProfileCommand}"/>
                 </Frame>
             </StackLayout>
         </Frame>
