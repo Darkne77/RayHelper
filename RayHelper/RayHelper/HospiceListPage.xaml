@@ -25,19 +25,22 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     
+    <!-- TODO Remove or fix -->
     <NavigationPage.TitleView>
         <Label Text="Список приютов" Style="{StaticResource TitleViewTextStyle}"/>
     </NavigationPage.TitleView>
     
     <StackLayout>
-        <ListView x:Name="HospiceList" ItemsSource="{Binding Hospices}">
+        <ListView x:Name="HospiceList"
+                  ItemsSource="{Binding Hospices}"
+                  SelectedItem="{Binding SelectedHospice, Mode=TwoWay}"
+                  SelectionMode="Single">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell
                         Text="{Binding Name}"
                         Detail="{Binding Address}"
-                        Command="{Binding Source={x:Reference Name=HospiceList}, Path=BindingContext.OpenHospiceProfileCommand}"
-                        CommandParameter="{Binding Source={RelativeSource Self}, Path=BindingContext}"/>
+                        Command="{Binding Source={x:Reference Name=HospiceList}, Path=BindingContext.OpenHospiceProfileCommand}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

@@ -18,5 +18,11 @@ namespace RayHelper
             var dataContext = new HospiceListPageViewModel();
             BindingContext = dataContext;
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            HospiceList.SelectedItem = null;
+        }
     }
 }

@@ -9,9 +9,24 @@ namespace RayHelper.ViewModels
 {
     public class HospiceListPageViewModel : MainViewModel
     {
+        private List<Hospice> hospices;
+        public List<Hospice> Hospices
+        {
+            get => hospices;
+            set => SetProperty(ref hospices, value);
+        }
+
+        private Hospice selectedHospice;
+        public Hospice SelectedHospice
+        {
+            get => selectedHospice;
+            set => SetProperty(ref selectedHospice, value);
+        }
+        public IMvxAsyncCommand OpenHospiceProfileCommand { get; }
+        
         public HospiceListPageViewModel()
         {
-            OpenHospiceProfileCommand = new MvxAsyncCommand<Hospice>(OpenHospiceProfileAsync);
+            OpenHospiceProfileCommand = new MvxAsyncCommand(OpenHospiceProfileAsync);
 
             Hospices = new List<Hospice>
             {
@@ -55,17 +70,9 @@ namespace RayHelper.ViewModels
             };
         }
 
-        private List<Hospice> hospices;
-        public List<Hospice> Hospices
+        private async Task OpenHospiceProfileAsync()
         {
-            get => hospices;
-            set => SetProperty(ref hospices, value);
-        }
-        public IMvxAsyncCommand<Hospice> OpenHospiceProfileCommand { get; }
-
-        private async Task OpenHospiceProfileAsync(Hospice hospice)
-        {
-            await Navigation.PushAsync(new HospiceProfilePage(hospice));
+            await Navigation.PushAsync(new HospiceProfilePage(SelectedHospice));
         }
     }
 }
