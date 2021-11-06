@@ -101,6 +101,10 @@
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\icon80.png" />
         <ImageAsset Include="Assets.xcassets\help.imageset\Contents.json" />
         <ImageAsset Include="Assets.xcassets\help.imageset\help.pdf" />
+        <ImageAsset Include="Assets.xcassets\search_gray.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\search_gray.imageset\search_gray.pdf" />
+        <ImageAsset Include="Assets.xcassets\search_orange.imageset\Contents.json" />
+        <ImageAsset Include="Assets.xcassets\search_orange.imageset\search_orange.pdf" />
         <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
         <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
             <Visible>false</Visible>
