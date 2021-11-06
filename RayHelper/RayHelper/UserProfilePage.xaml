@@ -12,45 +12,9 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Hello, world!"
+            <Label Text="Hello, UserProfilePage!"
                    VerticalOptions="CenterAndExpand"
                    HorizontalOptions="CenterAndExpand" />
-            <Frame x:Name="NavigationPanel" Style="{StaticResource CommonFrameStyle}"
-                   BorderColor="LightGray"
-                   CornerRadius="10">
-                <StackLayout Orientation="Horizontal"
-                             HorizontalOptions="Center"
-                             VerticalOptions="CenterAndExpand">
-                    <Frame Style="{StaticResource CommonFrameStyle}">
-                        <ImageButton HeightRequest="80"
-                                     WidthRequest="80"
-                                     Margin="10"
-                                     VerticalOptions="CenterAndExpand"
-                                     HorizontalOptions="Center"
-                                     Source="help"
-                                     Command="{Binding Source={x:Reference Name=NavigationPanel}, Path=BindingContext.OpenRayProfileCommand}"/>
-                    </Frame>
-                    <Frame Style="{StaticResource CommonFrameStyle}">
-                        <Button HeightRequest="80"
-                                WidthRequest="80"
-                                Margin="10"
-                                VerticalOptions="CenterAndExpand"
-                                HorizontalOptions="Center"
-                                BackgroundColor="Red"
-                                Text="Button2"/>
-                    </Frame>
-                    <Frame Style="{StaticResource CommonFrameStyle}">
-                        <Button HeightRequest="80"
-                                WidthRequest="80"
-                                Margin="10"
-                                VerticalOptions="CenterAndExpand"
-                                HorizontalOptions="Center"
-                                BackgroundColor="Yellow"
-                                Text="Button3"
-                                Command="{Binding Source={x:Reference Name=NavigationPanel}, Path=BindingContext.OpenUserProfileCommand}"/>
-                    </Frame>
-                </StackLayout>
-            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
