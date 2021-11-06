@@ -15,6 +15,14 @@ namespace RayHelper.ViewModels
             get => log;
             set => SetProperty(ref log, value);
         }
+        
+        private string _titleText;
+
+        public string TitleText
+        {
+            get => _titleText;
+            set => SetProperty(ref _titleText, value);
+        }
 
         public IMvxAsyncCommand OpenRayProfileCommand { get; }
         public IMvxAsyncCommand OpenUserProfileCommand { get; }
@@ -23,6 +31,8 @@ namespace RayHelper.ViewModels
 
         public MainViewModel()
         {
+            TitleText = "123";
+            
             Log = new List<string>();
             
             OpenRayProfileCommand = new MvxAsyncCommand(OpenRayProfileAsync);

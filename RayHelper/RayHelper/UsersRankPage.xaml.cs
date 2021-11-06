@@ -1,3 +1,4 @@
+using RayHelper.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,6 +10,8 @@ namespace RayHelper
         public UsersRankPage()
         {
             InitializeComponent();
+            var dataContext = new UsersRankPageViewModel();
+            BindingContext = dataContext;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Xamarin.Forms;
+﻿using RayHelper.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,6 +10,8 @@ namespace RayHelper
         public RayMainPage()
         {
             InitializeComponent();
+            var dataContext = new RayMainPageViewModel();
+            BindingContext = dataContext;
         }
     }
 }
