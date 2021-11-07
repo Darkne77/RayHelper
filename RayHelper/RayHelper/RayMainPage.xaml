@@ -10,16 +10,19 @@
        TabBarUnselectedColor="#959595">
     <TabBar>
         <Tab Title="Приюты"
-             Icon="search_gray">
+             Icon="search">
             <ShellContent ContentTemplate="{DataTemplate views:HospiceListPage}" />
         </Tab>
-        <Tab Title="Фонд Рэй">
+        <Tab Title="Фонд Рэй"
+             Icon="help">
             <ShellContent ContentTemplate="{DataTemplate views:RayProfilePage}" />
         </Tab>
-        <Tab Title="Рейтинг">
+        <Tab Title="Рейтинг"
+             Icon="rank">
             <ShellContent ContentTemplate="{DataTemplate views:UsersRankPage}" />
         </Tab>
-        <Tab Title="Пользователь">
+        <Tab Title="Пользователь"
+             Icon="profile">
             <ShellContent ContentTemplate="{DataTemplate views:UserProfilePage}" />
         </Tab>
     </TabBar>
