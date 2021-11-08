@@ -14,20 +14,11 @@ namespace RayHelper.ViewModels
             get => log;
             set => SetProperty(ref log, value);
         }
-        
-        //TODO Remove or fix
-        private string titleText;
-        public string TitleText
-        {
-            get => titleText;
-            set => SetProperty(ref titleText, value);
-        }
 
         public INavigation Navigation => Application.Current.MainPage.Navigation;
 
         public MainViewModel()
         {
-            TitleText = "123";
             Log = new List<string>();
         }
     }
