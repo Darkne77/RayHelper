@@ -13,32 +13,22 @@
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center">
             <StackLayout VerticalOptions="Center"
-                         HorizontalOptions="Center">
-                <Entry WidthRequest="300"
-                       ClearButtonVisibility="WhileEditing"
+                         HorizontalOptions="Fill">
+                <Entry ClearButtonVisibility="WhileEditing"
                        IsSpellCheckEnabled="False"
-                       Placeholder="Логин (почта)"/>
-                <Entry WidthRequest="300"
-                       ClearButtonVisibility="WhileEditing"
+                       Placeholder="Логин"
+                       Margin="15"/>
+                <Entry ClearButtonVisibility="WhileEditing"
                        IsSpellCheckEnabled="False"
                        IsPassword="True"
-                       Placeholder="Пароль"/>
+                       Placeholder="Пароль"
+                       Margin="15"/>
             </StackLayout>
             <Button Text="Войти"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="Center"
-                    HeightRequest="40"
-                    WidthRequest="300"
-                    Margin="10"
-                    CornerRadius="10"
+                    Style="{StaticResource CommonButtonStyle}"
                     BackgroundColor="Orange"/>
             <Button Text="Войти без регистрации"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="Center"
-                    HeightRequest="40"
-                    WidthRequest="300"
-                    Margin="10"
-                    CornerRadius="10"
+                    Style="{StaticResource CommonButtonStyle}"
                     BackgroundColor="LightGray"
                     Command="{Binding OpenMainPageCommand}"/>
         </StackLayout>

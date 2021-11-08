@@ -6,4 +6,12 @@
         <Setter Property="HasShadow" Value="False"/>
         <Setter Property="Padding" Value="0"/>
     </Style>
+    <Style x:Key="CommonButtonStyle" TargetType="Button">
+        <Setter Property="VerticalOptions" Value="Center"/>
+        <Setter Property="HorizontalOptions" Value="Fill"/>
+        <Setter Property="HeightRequest" Value="50"/>
+        <Setter Property="Margin" Value="15"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="TextColor" Value="White"/>
+    </Style>
 </ResourceDictionary>

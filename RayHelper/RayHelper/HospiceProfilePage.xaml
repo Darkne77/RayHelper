@@ -3,16 +3,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RayHelper.HospiceProfilePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="Тел.: +7(977)124-02-19"/>
             <Button Text="Показать на карте"
-                    VerticalOptions="CenterAndExpand"
-                    HorizontalOptions="Center"
-                    HeightRequest="40"
-                    WidthRequest="300"
-                    Margin="10"
-                    CornerRadius="10"
                     BackgroundColor="Red"
+                    Style="{StaticResource CommonButtonStyle}"
                     Command="{Binding OpenLocationOnMapCommand}"/>
         </StackLayout>
     </ContentPage.Content>
