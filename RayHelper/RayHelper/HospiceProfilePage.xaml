@@ -13,7 +13,8 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Тел.: +7(977)124-02-19"/>
+            <Button Text="{Binding Phone}"
+                    Command="{Binding OpenPhoneNumberCommand}"/>
             <Button Text="Показать на карте"
                     BackgroundColor="Red"
                     Style="{StaticResource CommonButtonStyle}"

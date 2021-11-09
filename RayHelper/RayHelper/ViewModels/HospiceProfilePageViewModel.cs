@@ -13,19 +13,17 @@ namespace RayHelper.ViewModels
         public HospiceProfilePageViewModel(Hospice hospice)
         {
             _hospice = hospice;
-            Title = hospice.Name;
-            
+
             OpenLocationOnMapCommand = new MvxAsyncCommand(OpenLocationOnMapAsync);
+            OpenPhoneNumberCommand = new MvxAsyncCommand(OpenPhoneNumberAsync);
         }
-        
-        private string _title;
-        public string Title
-        {
-            get => _title;
-            set => SetProperty(ref _title, value);
-        }
-        
+
+        public string ClassName => nameof(HospiceProfilePageViewModel);
+        public string Title => _hospice.Name;
+        public string Phone => $"Тел.: {_hospice.Phone}";
+
         public IMvxAsyncCommand OpenLocationOnMapCommand { get; }
+        public IMvxAsyncCommand OpenPhoneNumberCommand { get; }
 
         private async Task OpenLocationOnMapAsync()
         {
@@ -36,9 +34,37 @@ namespace RayHelper.ViewModels
             {
                 await Map.OpenAsync(location, options);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 // No map application available to open
+                Log.Add($"Class name: {ClassName}," +
+                        $"Method: {nameof(OpenLocationOnMapAsync)}," +
+                        $"Error: {e}");
+            }
+        }
+
+        private async Task OpenPhoneNumberAsync()
+        {
+            var phone = _hospice.Phone;
+            if (!string.IsNullOrWhiteSpace(phone))
+            {
+                try
+                {
+                    PhoneDialer.Open(phone);
+                }
+                catch (FeatureNotSupportedException)
+                {
+                    var error = "Phone Dialer is not supported on this device.";
+                    Log.Add($"Class name: {ClassName}," +
+                            $"Method: {nameof(OpenPhoneNumberAsync)}," +
+                            $"Error: {error}");
+                }
+                catch (Exception e)
+                {
+                    Log.Add($"Class name: {ClassName}," +
+                            $"Method: {nameof(OpenPhoneNumberAsync)}," +
+                            $"Error: {e}");
+                }
             }
         }
     }
