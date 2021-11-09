@@ -6,3 +6,6 @@
 /RayHelper/RayHelper.Android/obj
 /RayHelper/RayHelper.iOS/bin
 /RayHelper/RayHelper.iOS/obj
+/.vs/RayHelper
+/RayHelper/.idea/.idea.RayHelper/.idea
+/RayHelper.sln.DotSettings.user
