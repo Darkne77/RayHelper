@@ -16,6 +16,7 @@ namespace RayHelper.ViewModels
 
             OpenLocationOnMapCommand = new MvxAsyncCommand(OpenLocationOnMapAsync);
             OpenPhoneNumberCommand = new MvxAsyncCommand(OpenPhoneNumberAsync);
+            OpenLinkCommand = new MvxAsyncCommand(OpenLinkAsync);
         }
 
         public string ClassName => nameof(HospiceProfilePageViewModel);
@@ -24,6 +25,7 @@ namespace RayHelper.ViewModels
 
         public IMvxAsyncCommand OpenLocationOnMapCommand { get; }
         public IMvxAsyncCommand OpenPhoneNumberCommand { get; }
+        public IMvxAsyncCommand OpenLinkCommand { get; }
 
         private async Task OpenLocationOnMapAsync()
         {
@@ -65,6 +67,18 @@ namespace RayHelper.ViewModels
                             $"Method: {nameof(OpenPhoneNumberAsync)}," +
                             $"Error: {e}");
                 }
+            }
+        }
+
+        private async Task OpenLinkAsync()
+        {
+            try
+            {
+                await Browser.OpenAsync(_hospice.Website);
+            }
+            catch(Exception ex)
+            {
+                // An unexpected error occured. No browser may be installed on the device.
             }
         }
     }

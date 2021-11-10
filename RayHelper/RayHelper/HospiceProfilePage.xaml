@@ -13,11 +13,13 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="{Binding Address}"/>
             <Button Text="{Binding Phone}"
-                    Style="{StaticResource CommonButtonStyle}"
-                    BackgroundColor="Transparent"
-                    TextColor="Gray"
+                    Style="{StaticResource LinkButtonStyle}"
                     Command="{Binding OpenPhoneNumberCommand}"/>
+            <Button Text="Сайт"
+                    Style="{StaticResource LinkButtonStyle}"
+                    Command="{Binding OpenLinkCommand}"/>
             <Button Text="Показать на карте"
                     BackgroundColor="Red"
                     Style="{StaticResource CommonButtonStyle}"

@@ -10,6 +10,7 @@
         public string HouseNumber { get; set; }
         public string Metro { get; set; }
         public string Phone { get; set; }
+        public string Website { get; set; }
 
         public string Address => string.IsNullOrWhiteSpace(Metro)
             ? $"{City}, {Street}, {HouseNumber}"

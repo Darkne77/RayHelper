@@ -38,7 +38,8 @@ namespace RayHelper.ViewModels
                     HouseNumber = "1к3",
                     Latitude = 55.584126,
                     Longitude = 37.653343,
-                    Phone = "+7(977)124-02-19"
+                    Phone = "+7(977)124-02-19",
+                    Website = "https://yandex.ru/"
                 },
                 new Hospice()
                 {
@@ -48,7 +49,8 @@ namespace RayHelper.ViewModels
                 HouseNumber = "1к3",
                 Latitude = 55.584126,
                 Longitude = 37.653343,
-                Phone = "+7(977)124-02-19"
+                Phone = "+7(977)124-02-19",
+                Website = "https://yandex.ru/"
             },
             new Hospice()
             {
@@ -59,7 +61,8 @@ namespace RayHelper.ViewModels
                 Metro = "fdsjfhdsfsdi",
                 Latitude = 55.584126,
                 Longitude = 37.653343,
-                Phone = "+7(977)124-02-19"
+                Phone = "+7(977)124-02-19",
+                Website = "https://yandex.ru/"
             },
             new Hospice()
             {
@@ -69,7 +72,8 @@ namespace RayHelper.ViewModels
                 HouseNumber = "1к3 6575585656",
                 Latitude = 55.584126,
                 Longitude = 37.653343,
-                Phone = "+7(977)124-02-19"
+                Phone = "+7(977)124-02-19",
+                Website = "https://yandex.ru/"
             }
             };
         }
