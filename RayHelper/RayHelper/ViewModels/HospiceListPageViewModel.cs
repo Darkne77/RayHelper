@@ -9,18 +9,18 @@ namespace RayHelper.ViewModels
 {
     public class HospiceListPageViewModel : MainViewModel
     {
-        private List<Hospice> hospices;
+        private List<Hospice> _hospices;
         public List<Hospice> Hospices
         {
-            get => hospices;
-            set => SetProperty(ref hospices, value);
+            get => _hospices;
+            set => SetProperty(ref _hospices, value);
         }
 
-        private Hospice selectedHospice;
+        private Hospice _selectedHospice;
         public Hospice SelectedHospice
         {
-            get => selectedHospice;
-            set => SetProperty(ref selectedHospice, value);
+            get => _selectedHospice;
+            set => SetProperty(ref _selectedHospice, value);
         }
         public IMvxAsyncCommand OpenHospiceProfileCommand { get; }
         
