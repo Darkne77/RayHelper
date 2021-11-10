@@ -17,12 +17,12 @@
                 <Entry ClearButtonVisibility="WhileEditing"
                        IsSpellCheckEnabled="False"
                        Placeholder="Логин"
-                       Margin="15"/>
+                       Margin="15,0,15,15"/>
                 <Entry ClearButtonVisibility="WhileEditing"
                        IsSpellCheckEnabled="False"
                        IsPassword="True"
                        Placeholder="Пароль"
-                       Margin="15"/>
+                       Margin="15,0,15,15"/>
             </StackLayout>
             <Button Text="Войти"
                     Style="{StaticResource CommonButtonStyle}"
