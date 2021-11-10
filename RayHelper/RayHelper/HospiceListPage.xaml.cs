@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using RayHelper.ViewModels;
+﻿using RayHelper.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,12 +12,6 @@ namespace RayHelper
             InitializeComponent();
             var dataContext = new HospiceListPageViewModel();
             BindingContext = dataContext;
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            HospiceList.SelectedItem = null;
         }
     }
 }
