@@ -5,7 +5,8 @@
              xmlns:iOsSpecific="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              xmlns:essentials="clr-namespace:Xamarin.Essentials;assembly=Xamarin.Essentials"
              x:Class="RayHelper.HospiceListPage"
-             iOsSpecific:Page.UseSafeArea="True">
+             iOsSpecific:Page.UseSafeArea="True"
+             Title="Список приютов">
     <ContentPage.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -24,11 +25,6 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
-    <!-- TODO Remove or fix -->
-    <NavigationPage.TitleView>
-        <Label Text="Список приютов" Style="{StaticResource TitleViewTextStyle}"/>
-    </NavigationPage.TitleView>
     
     <StackLayout>
         <ListView x:Name="HospiceList"
