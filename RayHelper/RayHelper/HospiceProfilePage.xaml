@@ -13,7 +13,13 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding Address}"/>
+            <Label Text="{Binding Address}"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Center"
+                   HeightRequest="50"
+                   Margin="15,0,15,15"
+                   TextColor="Gray"
+                   BackgroundColor="Transparent"/>
             <Button Text="{Binding Phone}"
                     Style="{StaticResource LinkButtonStyle}"
                     Command="{Binding OpenPhoneNumberCommand}"/>
