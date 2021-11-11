@@ -7,8 +7,7 @@
        Title="{Binding TitleText}"
        BackgroundColor="#f7f7f5"
        TabBarTitleColor="#ff6300"
-       TabBarUnselectedColor="#959595"
-       TitleColor="Black">
+       TabBarUnselectedColor="#959595">
     <TabBar>
         <Tab Title="Приюты"
              Icon="search">
