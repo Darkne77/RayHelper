@@ -13,9 +13,35 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Hello, UserProfilePage!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
+            <!-- Show if user is authorized -->
+            <StackLayout IsVisible="{Binding IsUserAuthorized}">
+                <Label Text="Hello, UserProfilePage!"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand" />
+            </StackLayout>
+            <!-- Show if user is NOT authorized -->
+            <StackLayout IsVisible="{Binding IsUserNotAuthorized}">
+                <Label Text="Пожалуйста, авторизуйтесь"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                       HeightRequest="300"/>
+                <StackLayout VerticalOptions="Center"
+                             HorizontalOptions="Fill">
+                    <Entry ClearButtonVisibility="WhileEditing"
+                           IsSpellCheckEnabled="False"
+                           Placeholder="Логин"
+                           Margin="15,0,15,15"/>
+                    <Entry ClearButtonVisibility="WhileEditing"
+                           IsSpellCheckEnabled="False"
+                           IsPassword="True"
+                           Placeholder="Пароль"
+                           Margin="15,0,15,15"/>
+                </StackLayout>
+                <Button Text="Войти"
+                        Style="{StaticResource CommonButtonStyle}"
+                        BackgroundColor="#97d077"
+                        BorderColor="#82b366"/>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
