@@ -13,19 +13,31 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
+            <!-- Image -->
+            <Button Text="Написать"
+                    Style="{StaticResource CommonButtonStyle}"
+                    BackgroundColor="#dae8fc"
+                    BorderColor="#6c8ebf"
+                    Margin="15,15,15,15"/>
+            <Button Text="Помочь"
+                    Style="{StaticResource CommonButtonStyle}"
+                    BackgroundColor="#f8cecc"
+                    BorderColor="#b85450"/>
             <Label Text="{Binding Address}"
-                   HorizontalTextAlignment="Start"
-                   VerticalTextAlignment="Center"
-                   HeightRequest="50"
-                   Margin="15,0,15,15"
-                   TextColor="Gray"
-                   BackgroundColor="Transparent"/>
-            <Button Text="{Binding Phone}"
-                    Style="{StaticResource LinkButtonStyle}"
-                    Command="{Binding OpenPhoneNumberCommand}"/>
-            <Button Text="Сайт"
-                    Style="{StaticResource LinkButtonStyle}"
-                    Command="{Binding OpenLinkCommand}"/>
+                   Style="{StaticResource LinkButtonStyle}"
+                   TextDecorations="None"/>
+            <Label Text="{Binding Phone}"
+                   Style="{StaticResource LinkButtonStyle}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenPhoneNumberCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="Сайт"
+                   Style="{StaticResource LinkButtonStyle}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenLinkCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
             <Button Text="Показать на карте"
                     BackgroundColor="Red"
                     Style="{StaticResource CommonButtonStyle}"
