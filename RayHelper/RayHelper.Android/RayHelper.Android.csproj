@@ -14,7 +14,6 @@
         <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
         <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
         <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-        <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
         <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
         <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
     </PropertyGroup>
@@ -71,7 +70,7 @@
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\RayHelper\RayHelper.csproj">
-            <Project>{C8418437-04A0-4B82-9EA5-EB098A6417DE}</Project>
+            <Project>{A55E4DA1-72B9-40CD-822C-CA2C0D8155DB}</Project>
             <Name>RayHelper</Name>
         </ProjectReference>
     </ItemGroup>

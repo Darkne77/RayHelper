@@ -113,6 +113,8 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\help.imageset\help.pdf" />
+    <ImageAsset Include="Assets.xcassets\logoWithText.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\logoWithText.imageset\logo.pdf" />
     <ImageAsset Include="Assets.xcassets\profile.imageset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -125,6 +127,7 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\search.imageset\search.pdf" />
+    <InterfaceDefinition Include="LoadScreen.storyboard" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
