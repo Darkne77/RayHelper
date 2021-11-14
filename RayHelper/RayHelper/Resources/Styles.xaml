@@ -7,8 +7,13 @@
         <Setter Property="Margin" Value="15,0,15,15"/>
         <Setter Property="TextColor" Value="White"/>
     </Style>
-    <Style x:Key="LinkButtonStyle" TargetType="Button" BasedOn="{StaticResource CommonButtonStyle}">
-        <Setter Property="BackgroundColor" Value="Transparent"/>
+    <Style x:Key="LinkButtonStyle" TargetType="Label">
         <Setter Property="TextColor" Value="Gray"/>
+        <Setter Property="Margin" Value="15,0,15,5"/>
+        <Setter Property="HeightRequest" Value="50"/>
+        <Setter Property="HorizontalTextAlignment" Value="Start"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+        <Setter Property="TextDecorations" Value="Underline"/>
     </Style>
+    
 </ResourceDictionary>
