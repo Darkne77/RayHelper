@@ -21,7 +21,7 @@ namespace RayHelper.ViewModels
 
         public string ClassName => nameof(HospiceProfilePageViewModel);
         public string Title => _hospice.Name;
-        public string Phone => $"Тел.: {_hospice.Phone}";
+        public string Phone => $"Тел.: {_hospice.Mobile}";
         public string Address => _hospice.Address;
 
         public IMvxAsyncCommand OpenLocationOnMapCommand { get; }
@@ -48,7 +48,7 @@ namespace RayHelper.ViewModels
 
         private async Task OpenPhoneNumberAsync()
         {
-            var phone = _hospice.Phone;
+            var phone = _hospice.Mobile;
             if (!string.IsNullOrWhiteSpace(phone))
             {
                 try
