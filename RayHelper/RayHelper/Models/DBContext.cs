@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
-using System.Text.Json;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace RayHelper.Models
 {
@@ -10,11 +10,9 @@ namespace RayHelper.Models
         private readonly HttpClient _client = new HttpClient(); 
         public async Task<List<Hospice>> GetHospices()
         {
-            var streamTask = _client.GetStreamAsync("http://rayhelper.westeurope.cloudapp.azure.com/api/Hospice");
-            var hospices = await JsonSerializer
-                                 .DeserializeAsync<List<Hospice>>(await streamTask)
-                                 .ConfigureAwait(false);
-            return hospices; 
+            var json = _client.GetStringAsync("http://rayhelper.westeurope.cloudapp.azure.com/api/Hospice");
+            var hospices = JsonConvert.DeserializeObject<List<Hospice>>(await json.ConfigureAwait(false));
+            return hospices;
         }
     }
 }

@@ -28,7 +28,7 @@
     
     <StackLayout>
         <ListView x:Name="HospiceList"
-                  ItemsSource="{Binding Hospices}"
+                  ItemsSource="{Binding Hospices, Mode=TwoWay}"
                   SelectedItem="{Binding SelectedHospice, Mode=TwoWay}"
                   SelectionMode="Single">
             <ListView.ItemTemplate>
