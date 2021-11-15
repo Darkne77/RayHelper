@@ -23,59 +23,38 @@ namespace RayHelper.ViewModels
             set => SetProperty(ref _selectedHospice, value);
         }
         public IMvxAsyncCommand OpenHospiceProfileCommand { get; }
+
+        private readonly DbContext _dbContext;
         
         public HospiceListPageViewModel()
         {
             OpenHospiceProfileCommand = new MvxAsyncCommand(OpenHospiceProfileAsync);
+            Hospices = new List<Hospice>();
 
-            Hospices = new List<Hospice>
+            _dbContext = new DbContext();
+            
+            LoadData();
+        }
+        
+        public string ClassName => nameof(HospiceListPageViewModel);
+
+        private async void LoadData()
+        {
+            try
             {
-                new Hospice()
+                var hospices = await _dbContext.GetHospices().ConfigureAwait(false);
+                
+                foreach (var hospice in hospices)
                 {
-                    Name = "Приют для животных, Бирюлёво Западное Продолжение названия и т.д.",
-                    City = "Москва",
-                    Street = "Харьковская улица",
-                    HouseNumber = "1к3",
-                    Latitude = 55.584126,
-                    Longitude = 37.653343,
-                    Phone = "+7(977)124-02-19",
-                    Website = "https://yandex.ru/"
-                },
-                new Hospice()
-                {
-                Name = "Приют, Бирюлёво Западное",
-                City = "Москва",
-                Street = "Харьковская улица",
-                HouseNumber = "1к3",
-                Latitude = 55.584126,
-                Longitude = 37.653343,
-                Phone = "+7(977)124-02-19",
-                Website = "https://yandex.ru/"
-            },
-            new Hospice()
-            {
-                Name = "Приют, Бирюлёво Западное",
-                City = "Москва",
-                Street = "Харьковская улица",
-                HouseNumber = "1к3",
-                Metro = "fdsjfhdsfsdi",
-                Latitude = 55.584126,
-                Longitude = 37.653343,
-                Phone = "+7(977)124-02-19",
-                Website = "https://yandex.ru/"
-            },
-            new Hospice()
-            {
-                Name = "Приют, Бирюлёво Западное",
-                City = "Москва",
-                Street = "Харьковская улица ffdfgdgfd",
-                HouseNumber = "1к3 6575585656",
-                Latitude = 55.584126,
-                Longitude = 37.653343,
-                Phone = "+7(977)124-02-19",
-                Website = "https://yandex.ru/"
+                    Hospices.Add(hospice);
+                }
             }
-            };
+            catch (Exception e)
+            {
+                Log.Add($"Class name: {ClassName}," +
+                        $"Method: {nameof(LoadData)}," +
+                        $"Error: {e}");
+            }
         }
 
         private async Task OpenHospiceProfileAsync()
