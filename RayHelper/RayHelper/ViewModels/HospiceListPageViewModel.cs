@@ -44,13 +44,10 @@ namespace RayHelper.ViewModels
             try
             {
                 var hospices = await _dbContext.GetHospices().ConfigureAwait(false);
-
-                if (hospices is not null)
+                
+                foreach (var hospice in hospices)
                 {
-                    foreach (var hospice in hospices)
-                    {
-                        Hospices.Add(hospice);
-                    }
+                    Hospices.Add(hospice);
                 }
             }
             catch (Exception e)
