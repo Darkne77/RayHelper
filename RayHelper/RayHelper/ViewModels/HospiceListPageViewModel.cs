@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using MvvmCross.Commands;
 using RayHelper.Models;
@@ -9,8 +10,8 @@ namespace RayHelper.ViewModels
 {
     public class HospiceListPageViewModel : MainViewModel
     {
-        private List<Hospice> _hospices;
-        public List<Hospice> Hospices
+        private ObservableCollection<Hospice> _hospices;
+        public ObservableCollection<Hospice> Hospices
         {
             get => _hospices;
             set => SetProperty(ref _hospices, value);
@@ -29,7 +30,7 @@ namespace RayHelper.ViewModels
         public HospiceListPageViewModel()
         {
             OpenHospiceProfileCommand = new MvxAsyncCommand(OpenHospiceProfileAsync);
-            Hospices = new List<Hospice>();
+            Hospices = new ObservableCollection<Hospice>();
 
             _dbContext = new DbContext();
             
