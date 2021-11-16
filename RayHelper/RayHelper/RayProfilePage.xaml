@@ -12,9 +12,18 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Hello, RayProfilePage!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
+            <Label Text="О Нас"
+                   Style="{StaticResource LinkButtonStyle}">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenAboutUsLinkCommand}"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Text="О приложении"
+                   Style="{StaticResource LinkButtonStyle}">
+            </Label>
+            <Label Text="Обратная связь"
+                   Style="{StaticResource LinkButtonStyle}">
+            </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
