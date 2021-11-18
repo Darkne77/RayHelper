@@ -9,19 +9,21 @@ namespace RayHelper.ViewModels
         public LoginPageViewModel()
         {
             OpenMainPageCommand = new MvxAsyncCommand(OpenMainPageAsync);
+            AuthorizeUserCommand = new MvxAsyncCommand(AuthorizeUserAsync);
         }
+        
+        public IMvxAsyncCommand OpenMainPageCommand { get; }
+        public IMvxAsyncCommand AuthorizeUserCommand { get; }
 
         private async Task OpenMainPageAsync()
         {
             Application.Current.MainPage = new RayMainPage();
         }
-
-        private IMvxAsyncCommand openMainPageCommand;
-
-        public IMvxAsyncCommand OpenMainPageCommand
+        
+        private async Task AuthorizeUserAsync()
         {
-            get => openMainPageCommand;
-            set => SetProperty(ref openMainPageCommand, value);
+            IsUserAuthorized = true;
+            Application.Current.MainPage = new RayMainPage();
         }
     }
 }

@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using MvvmCross.Commands;
 using MvvmCross.ViewModels;
 using Xamarin.Forms;
 
@@ -13,6 +11,13 @@ namespace RayHelper.ViewModels
         {
             get => log;
             set => SetProperty(ref log, value);
+        }
+        
+        private bool _isUserAuthorized;
+        public bool IsUserAuthorized
+        {
+            get => _isUserAuthorized;
+            set => SetProperty(ref _isUserAuthorized, value);
         }
 
         public INavigation Navigation => Application.Current.MainPage.Navigation;

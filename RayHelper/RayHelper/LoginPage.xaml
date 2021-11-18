@@ -25,7 +25,8 @@
                        Margin="15,0,15,15"/>
             </StackLayout>
             <Button Text="Войти"
-                    Style="{StaticResource EntryButtonStyle}"/>
+                    Style="{StaticResource EntryButtonStyle}"
+                    Command="{Binding AuthorizeUserCommand}"/>
             <Button Text="Войти без регистрации"
                     Style="{StaticResource CommonButtonStyle}"
                     BackgroundColor="LightGray"
