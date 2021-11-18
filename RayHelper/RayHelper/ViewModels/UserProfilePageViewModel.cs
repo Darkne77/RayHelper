@@ -9,11 +9,9 @@ namespace RayHelper.ViewModels
             set => SetProperty(ref _isUserAuthorized, value);
         }
 
-        public bool IsUserNotAuthorized => !IsUserAuthorized;
-
         public UserProfilePageViewModel()
         {
-            IsUserAuthorized = true;
+            IsUserAuthorized = false;
         }
     }
 }

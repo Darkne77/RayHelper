@@ -14,13 +14,29 @@
     <ContentPage.Content>
         <StackLayout>
             <!-- Show if user is authorized -->
-            <StackLayout IsVisible="{Binding IsUserAuthorized}">
+            <StackLayout VerticalOptions="Center"
+                         HorizontalOptions="Fill">
+                <StackLayout.Triggers>
+                    <DataTrigger TargetType="StackLayout"
+                                 Binding="{Binding IsUserAuthorized}"
+                                 Value="False">
+                        <Setter Property="IsVisible" Value="False"/>
+                    </DataTrigger>
+                </StackLayout.Triggers>
                 <Label Text="Hello, UserProfilePage!"
                        VerticalOptions="CenterAndExpand"
                        HorizontalOptions="CenterAndExpand" />
             </StackLayout>
             <!-- Show if user is NOT authorized -->
-            <StackLayout IsVisible="{Binding IsUserNotAuthorized}">
+            <StackLayout VerticalOptions="Center"
+                         HorizontalOptions="Fill">
+                <StackLayout.Triggers>
+                    <DataTrigger TargetType="StackLayout"
+                                 Binding="{Binding IsUserAuthorized}"
+                                 Value="True">
+                        <Setter Property="IsVisible" Value="False"/>
+                    </DataTrigger>
+                </StackLayout.Triggers>
                 <Label Text="Пожалуйста, авторизуйтесь"
                        VerticalTextAlignment="Center"
                        HorizontalTextAlignment="Center"
