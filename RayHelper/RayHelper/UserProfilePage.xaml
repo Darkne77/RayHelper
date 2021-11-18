@@ -14,7 +14,7 @@
     <ContentPage.Content>
         <StackLayout>
             <!-- Show if user is authorized -->
-            <StackLayout VerticalOptions="Center"
+            <StackLayout VerticalOptions="CenterAndExpand"
                          HorizontalOptions="Fill">
                 <StackLayout.Triggers>
                     <DataTrigger TargetType="StackLayout"
@@ -23,12 +23,23 @@
                         <Setter Property="IsVisible" Value="False"/>
                     </DataTrigger>
                 </StackLayout.Triggers>
-                <Label Text="Hello, UserProfilePage!"
-                       VerticalOptions="CenterAndExpand"
-                       HorizontalOptions="CenterAndExpand" />
+                <!-- Profile icon -->
+                <Label Text="Имя"
+                       Style="{StaticResource LinkButtonStyle}"
+                       TextDecorations="None"/>
+                <Label Text="{Binding UserName}"
+                       Margin="15,0,15,5"/>
+                <Label Text="Логин"
+                       Style="{StaticResource LinkButtonStyle}"
+                       TextDecorations="None"/>
+                <Label Text="{Binding Login}"
+                       Margin="15,0,15,5"/>
+                <Label HeightRequest="15"/>
+                <Button Text="Выйти из аккаунта"
+                        Style="{StaticResource EntryButtonStyle}"/>
             </StackLayout>
             <!-- Show if user is NOT authorized -->
-            <StackLayout VerticalOptions="Center"
+            <StackLayout VerticalOptions="CenterAndExpand"
                          HorizontalOptions="Fill">
                 <StackLayout.Triggers>
                     <DataTrigger TargetType="StackLayout"
@@ -40,7 +51,7 @@
                 <Label Text="Пожалуйста, авторизуйтесь"
                        VerticalTextAlignment="Center"
                        HorizontalTextAlignment="Center"
-                       HeightRequest="300"/>
+                       HeightRequest="200"/>
                 <StackLayout VerticalOptions="Center"
                              HorizontalOptions="Fill">
                     <Entry ClearButtonVisibility="WhileEditing"
