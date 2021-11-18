@@ -6,6 +6,7 @@
         <Setter Property="HeightRequest" Value="50"/>
         <Setter Property="Margin" Value="15,0,15,15"/>
         <Setter Property="TextColor" Value="White"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
     </Style>
     <Style x:Key="LinkButtonStyle" TargetType="Label">
         <Setter Property="TextColor" Value="Gray"/>
@@ -14,6 +15,10 @@
         <Setter Property="HorizontalTextAlignment" Value="Start"/>
         <Setter Property="VerticalTextAlignment" Value="Center"/>
         <Setter Property="TextDecorations" Value="Underline"/>
+    </Style>
+    <Style x:Key="EntryButtonStyle" TargetType="Button" BasedOn="{StaticResource CommonButtonStyle}">
+        <Setter Property="BackgroundColor" Value="#97d077"/>
+        <Setter Property="BorderColor" Value="#82b366"/>
     </Style>
     
 </ResourceDictionary>

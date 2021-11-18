@@ -25,8 +25,7 @@
                        Margin="15,0,15,15"/>
             </StackLayout>
             <Button Text="Войти"
-                    Style="{StaticResource CommonButtonStyle}"
-                    BackgroundColor="Orange"/>
+                    Style="{StaticResource EntryButtonStyle}"/>
             <Button Text="Войти без регистрации"
                     Style="{StaticResource CommonButtonStyle}"
                     BackgroundColor="LightGray"

@@ -54,9 +54,7 @@
                            Margin="15,0,15,15"/>
                 </StackLayout>
                 <Button Text="Войти"
-                        Style="{StaticResource CommonButtonStyle}"
-                        BackgroundColor="#97d077"
-                        BorderColor="#82b366"/>
+                        Style="{StaticResource EntryButtonStyle}"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
