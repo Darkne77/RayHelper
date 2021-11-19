@@ -1,4 +1,7 @@
 ﻿using System;
+using MvvmCross;
+using MvvmCross.IoC;
+using RayHelper.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +14,17 @@ namespace RayHelper
         public App()
         {
             InitializeComponent();
+
+            //Initialize MVVMCross Dependency Container 
+            MvxIoCProvider.Initialize();
+            RegisterDependencies();
+            
             MainPage = new LoginPage();
+        }
+
+        private void RegisterDependencies()
+        {
+            Mvx.IoCProvider.RegisterSingleton(new AuthorizationService());
         }
 
         protected override void OnStart()

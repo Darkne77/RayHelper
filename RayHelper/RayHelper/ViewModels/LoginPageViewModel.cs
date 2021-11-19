@@ -1,5 +1,7 @@
 using System.Threading.Tasks;
+using MvvmCross;
 using MvvmCross.Commands;
+using RayHelper.Models;
 using Xamarin.Forms;
 
 namespace RayHelper.ViewModels

@@ -1,7 +1,16 @@
+using MvvmCross;
+using RayHelper.Models;
+
 namespace RayHelper.ViewModels
 {
     public class UserProfilePageViewModel : MainViewModel
     {
+        public UserProfilePageViewModel()
+        {
+            UserName = "Петр Францевич";
+            Login = "petr_madi@rambler.ru";
+        }
+        
         private string _userName;
         public string UserName
         {
@@ -14,12 +23,6 @@ namespace RayHelper.ViewModels
         {
             get => _login;
             set => SetProperty(ref _login, value);
-        }
-
-        public UserProfilePageViewModel()
-        {
-            UserName = "Петр Францевич";
-            Login = "petr_madi@rambler.ru";
         }
     }
 }
