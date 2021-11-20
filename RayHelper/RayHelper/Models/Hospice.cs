@@ -13,6 +13,7 @@
         public string Website { get; set; }
         public string EMail { get; set; }
         public string Details { get; set; }
+        public string Photo { get; set; }
 
         public string Address => string.IsNullOrWhiteSpace(Metro) 
                                      ? $"{City}, {Street}, {HouseNumber}" 
