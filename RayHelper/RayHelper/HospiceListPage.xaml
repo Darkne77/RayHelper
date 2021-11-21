@@ -30,13 +30,14 @@
         <ListView x:Name="HospiceList"
                   ItemsSource="{Binding Hospices, Mode=TwoWay}"
                   SelectedItem="{Binding SelectedHospice, Mode=TwoWay}"
-                  SelectionMode="Single">
+                  SelectionMode="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell
                         Text="{Binding Name}"
                         Detail="{Binding Address}"
-                        Command="{Binding Source={x:Reference Name=HospiceList}, Path=BindingContext.OpenHospiceProfileCommand}"/>
+                        Command="{Binding Source={x:Reference Name=HospiceList}, Path=BindingContext.OpenHospiceProfileCommand}"
+                        CommandParameter="{Binding Source={RelativeSource Self}, Path=BindingContext}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

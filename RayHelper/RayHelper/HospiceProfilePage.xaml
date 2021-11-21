@@ -12,37 +12,41 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Image Source="{Binding ImageSource}"
-                   HeightRequest="300"/>
+        <ScrollView>
+            <StackLayout>
+                <Image Source="{Binding ImageSource}"
+                       HeightRequest="300"/>
                 <Button Text="Написать"
                         Style="{StaticResource CommonButtonStyle}"
                         BackgroundColor="#dae8fc"
                         BorderColor="#6c8ebf"
                         Margin="15,15,15,15"/>
-            <Button Text="Помочь"
-                    Style="{StaticResource CommonButtonStyle}"
-                    BackgroundColor="#f8cecc"
-                    BorderColor="#b85450"/>
-            <Label Text="{Binding Address}"
-                   Style="{StaticResource LinkButtonStyle}"
-                   TextDecorations="None"/>
-            <Label Text="{Binding Phone}"
-                   Style="{StaticResource LinkButtonStyle}">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding OpenPhoneNumberCommand}"/>
-                </Label.GestureRecognizers>
-            </Label>
-            <Label Text="Сайт"
-                   Style="{StaticResource LinkButtonStyle}">
-                <Label.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding OpenLinkCommand}"/>
-                </Label.GestureRecognizers>
-            </Label>
-            <Button Text="Показать на карте"
-                    BackgroundColor="Red"
-                    Style="{StaticResource CommonButtonStyle}"
-                    Command="{Binding OpenLocationOnMapCommand}"/>
-        </StackLayout>
+                <Button Text="Помочь"
+                        Style="{StaticResource CommonButtonStyle}"
+                        BackgroundColor="#f8cecc"
+                        BorderColor="#b85450"/>
+                <Label Text="{Binding Address}"
+                       Style="{StaticResource LinkButtonStyle}"
+                       TextDecorations="None"/>
+                <Label Text="{Binding Phone}"
+                       Style="{StaticResource LinkButtonStyle}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenPhoneNumberCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="Сайт"
+                       Style="{StaticResource LinkButtonStyle}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding OpenLinkCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Button Text="Показать на карте"
+                        BackgroundColor="Red"
+                        Style="{StaticResource CommonButtonStyle}"
+                        Command="{Binding OpenLocationOnMapCommand}"/>
+                <Label Text="{Binding Details}"
+                       Margin="15,0,15,0"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

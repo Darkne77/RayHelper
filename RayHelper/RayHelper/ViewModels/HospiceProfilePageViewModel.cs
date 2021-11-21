@@ -24,6 +24,7 @@ namespace RayHelper.ViewModels
         public string Phone => $"Тел.: {_hospice.Mobile}";
         public string Address => _hospice.Address;
         public string ImageSource => _hospice.Photo;
+        public string Details => _hospice.Details;
 
         public IMvxAsyncCommand OpenLocationOnMapCommand { get; }
         public IMvxAsyncCommand OpenPhoneNumberCommand { get; }
