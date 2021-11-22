@@ -28,7 +28,7 @@
     
     <StackLayout>
         <ListView x:Name="HospiceList"
-                  ItemsSource="{Binding Hospice}"
+                  ItemsSource="{Binding Hospices}"
                   SelectionMode="None">
             <ListView.ItemTemplate>
                 <DataTemplate>
