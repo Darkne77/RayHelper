@@ -18,13 +18,11 @@
                        HeightRequest="300"/>
                 <Button Text="Написать"
                         Style="{StaticResource CommonButtonStyle}"
-                        BackgroundColor="#dae8fc"
-                        BorderColor="#6c8ebf"
+                        BackgroundColor="#6c8ebf"
                         Margin="15,15,15,15"/>
                 <Button Text="Помочь"
                         Style="{StaticResource CommonButtonStyle}"
-                        BackgroundColor="#f8cecc"
-                        BorderColor="#b85450"/>
+                        BackgroundColor="#b85450"/>
                 <Label Text="{Binding Address}"
                        Style="{StaticResource LinkButtonStyle}"
                        TextDecorations="None"/>
