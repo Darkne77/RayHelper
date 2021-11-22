@@ -6,9 +6,17 @@
              Title="Рейтинг пользователей">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Hello, UsersRankPage!"
-                   VerticalOptions="CenterAndExpand"
-                   HorizontalOptions="CenterAndExpand" />
+            <ListView x:Name="UsersList"
+                      ItemsSource="{Binding Users}"
+                      SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell
+                            Text="{Binding FullName}"
+                            Detail="{Binding RankText}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
