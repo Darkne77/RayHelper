@@ -14,6 +14,9 @@ namespace RayHelper
         public App()
         {
             InitializeComponent();
+            
+            //Remove after add dark theme
+            Application.Current.UserAppTheme = OSAppTheme.Light;
 
             //Initialize MVVMCross Dependency Container 
             MvxIoCProvider.Initialize();
