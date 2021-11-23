@@ -4,7 +4,6 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using MvvmCross.Commands;
 using RayHelper.Models;
-using Xamarin.Essentials;
 
 namespace RayHelper.ViewModels
 {
@@ -140,8 +139,8 @@ namespace RayHelper.ViewModels
                            };
             Hospices = new ObservableCollection<Hospice>(hospices);
         }
-        
-        public string ClassName => nameof(HospiceListPageViewModel);
+
+        private string ClassName => nameof(HospiceListPageViewModel);
 
         private async void LoadData()
         {

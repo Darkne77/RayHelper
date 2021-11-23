@@ -12,6 +12,10 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
+            <Button Text="Помочь фонду"
+                    Style="{StaticResource CommonButtonStyle}"
+                    BackgroundColor="Red"
+                    Command="{Binding OpenHelpWebSiteCommand}"/>
             <Label Text="О Нас"
                    Style="{StaticResource LinkButtonStyle}">
                 <Label.GestureRecognizers>
