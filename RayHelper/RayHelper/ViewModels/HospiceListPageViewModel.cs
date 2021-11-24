@@ -32,7 +32,7 @@ namespace RayHelper.ViewModels
                            {
                                new Hospice()
                                {
-                                   Name = "Приют 'Дубовая Роща'",
+                                   Name = "Приют «Дубовая Роща»",
                                    City = "Москва",
                                    Street = "Проезд Дубовой рощи",
                                    HouseNumber = "Вл.23-25",
@@ -47,7 +47,7 @@ namespace RayHelper.ViewModels
                                },
                                new Hospice()
                                {
-                                   Name = "Приют 'Красная сосна'",
+                                   Name = "Приют «Красная сосна»",
                                    City = "Москва",
                                    Street = "Красная сосна",
                                    HouseNumber = "0",
@@ -62,7 +62,6 @@ namespace RayHelper.ViewModels
                                },
                                new Hospice()
                                {
-                                   //Поправить опечатку в БД
                                    Name = "Приют в Печатниках",
                                    City = "Москва",
                                    Street = "Проектируемый проезд №5112",
@@ -78,7 +77,7 @@ namespace RayHelper.ViewModels
                                },
                                new Hospice()
                                {
-                                   Name = "Приют 'Кожуховский'",
+                                   Name = "Приют «Кожуховский»",
                                    City = "Москва",
                                    Street = "Пехорская улица",
                                    HouseNumber = "1Б",
@@ -93,7 +92,7 @@ namespace RayHelper.ViewModels
                                },
                                new Hospice()
                                {
-                                   Name = "Приют 'Бирюлёво'",
+                                   Name = "Приют «Бирюлёво»",
                                    City = "Москва",
                                    Street = "Востряковский проезд",
                                    HouseNumber = "вл10А/2",
@@ -108,7 +107,7 @@ namespace RayHelper.ViewModels
                                },
                                new Hospice()
                                {
-                                   Name = "Приют 'Щербинка'",
+                                   Name = "Приют «Щербинка»",
                                    City = "Москва",
                                    Street = "улица Брусилова",
                                    HouseNumber = "32",
@@ -123,7 +122,7 @@ namespace RayHelper.ViewModels
                                },
                                new Hospice()
                                {
-                                   Name = "Приют в 'Одинцово'",
+                                   Name = "Приют в «Одинцово»",
                                    City = "Москва",
                                    Street = "Рабочий посёлок Большие Вязёмы",
                                    HouseNumber = "0",
