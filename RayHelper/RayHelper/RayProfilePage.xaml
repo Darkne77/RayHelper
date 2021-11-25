@@ -12,6 +12,8 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
+            <Image Source="{Binding RayImageSource}"
+                   HeightRequest="300"/>
             <Button Text="Помочь фонду"
                     Style="{StaticResource CommonButtonStyle}"
                     BackgroundColor="Red"

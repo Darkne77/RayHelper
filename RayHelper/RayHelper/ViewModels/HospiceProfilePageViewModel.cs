@@ -19,7 +19,8 @@ namespace RayHelper.ViewModels
             OpenLinkCommand = new MvxAsyncCommand(OpenLinkAsync);
         }
 
-        public string ClassName => nameof(HospiceProfilePageViewModel);
+        protected override string ClassName => nameof(HospiceProfilePageViewModel);
+        
         public string Title => _hospice.Name;
         public string Phone => $"Тел.: {_hospice.Mobile}";
         public string Address => _hospice.Address;

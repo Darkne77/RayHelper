@@ -13,7 +13,9 @@ namespace RayHelper.ViewModels
             OpenMainPageCommand = new MvxAsyncCommand(OpenMainPageAsync);
             AuthorizeUserCommand = new MvxAsyncCommand(AuthorizeUserAsync);
         }
-        
+
+        protected override string ClassName => nameof(LoginPageViewModel);
+
         public IMvxAsyncCommand OpenMainPageCommand { get; }
         public IMvxAsyncCommand AuthorizeUserCommand { get; }
 

@@ -49,6 +49,8 @@ namespace RayHelper.ViewModels
             //LoadData();
         }
 
+        protected override string ClassName => nameof(UsersRankPageViewModel);
+
         private void LoadData()
         {
             //TODO

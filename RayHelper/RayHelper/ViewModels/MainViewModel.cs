@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace RayHelper.ViewModels
 {
-    public class MainViewModel : MvxViewModel
+    public abstract class MainViewModel : MvxViewModel
     {
         private readonly AuthorizationService _authorizationService;
         public MainViewModel()
@@ -29,5 +29,7 @@ namespace RayHelper.ViewModels
         }
         
         public INavigation Navigation => Application.Current.MainPage.Navigation;
+
+        protected abstract string ClassName { get; }
     }
 }

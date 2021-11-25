@@ -139,7 +139,7 @@ namespace RayHelper.ViewModels
             Hospices = new ObservableCollection<Hospice>(hospices);
         }
 
-        private string ClassName => nameof(HospiceListPageViewModel);
+        protected override string ClassName => nameof(HospiceListPageViewModel);
 
         private async void LoadData()
         {
