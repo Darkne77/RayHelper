@@ -25,6 +25,7 @@ namespace RayHelper
         private void RegisterDependencies()
         {
             Mvx.IoCProvider.RegisterSingleton(new AuthorizationService());
+            Mvx.IoCProvider.RegisterSingleton(new Logger());
         }
 
         protected override void OnStart()

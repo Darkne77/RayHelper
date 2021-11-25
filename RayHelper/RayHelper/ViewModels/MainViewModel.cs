@@ -9,19 +9,15 @@ namespace RayHelper.ViewModels
     public abstract class MainViewModel : MvxViewModel
     {
         private readonly AuthorizationService _authorizationService;
+        private readonly Logger _logger;
         public MainViewModel()
         {
-            Log = new List<string>();
             _authorizationService = Mvx.IoCProvider.Resolve<AuthorizationService>();
+            _logger = Mvx.IoCProvider.Resolve<Logger>();
         }
         
-        private List<string> log;
-        public List<string> Log
-        {
-            get => log;
-            set => SetProperty(ref log, value);
-        }
-        
+        public List<string> Log => _logger.Log;
+
         public bool IsUserAuthorized
         {
             get => _authorizationService.IsUserAuthorized;
