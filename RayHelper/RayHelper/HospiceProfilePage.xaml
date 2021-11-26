@@ -15,7 +15,8 @@
         <ScrollView>
             <StackLayout>
                 <Image Source="{Binding ImageSource}"
-                       HeightRequest="300"/>
+                       HeightRequest="300"
+                       Margin="0,10,0,10"/>
                 <Button Text="Написать"
                         Style="{StaticResource CommonButtonStyle}"
                         BackgroundColor="#6c8ebf"

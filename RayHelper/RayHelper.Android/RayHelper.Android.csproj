@@ -60,6 +60,7 @@
         <None Include="Properties\AndroidManifest.xml" />
     </ItemGroup>
     <ItemGroup>
+        <AndroidResource Include="Resources\drawable\help.png" />
         <AndroidResource Include="Resources\drawable\rank.png" />
         <AndroidResource Include="Resources\drawable\search.png" />
         <AndroidResource Include="Resources\drawable\profile.png" />
