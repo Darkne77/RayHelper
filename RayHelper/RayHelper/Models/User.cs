@@ -11,6 +11,7 @@ namespace RayHelper.Models
         public string BirthDay { get; set; }
         public string Mobile { get; set; }
         public int Rank { get; set; }
+        public string ImageSource { get; set; }
         public string FullName => $"{FirstName} {LastName}";
         public string RankText => $"{Rank} выполненых задач";
         

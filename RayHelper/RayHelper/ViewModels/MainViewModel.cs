@@ -10,13 +10,16 @@ namespace RayHelper.ViewModels
     {
         private readonly AuthorizationService _authorizationService;
         private readonly Logger _logger;
+        private readonly DbContext _dbContext;
         public MainViewModel()
         {
             _authorizationService = Mvx.IoCProvider.Resolve<AuthorizationService>();
             _logger = Mvx.IoCProvider.Resolve<Logger>();
+            _dbContext = Mvx.IoCProvider.Resolve<DbContext>();
         }
         
         public List<string> Log => _logger.Log;
+        public DbContext DbContext => _dbContext;
 
         public bool IsUserAuthorized
         {

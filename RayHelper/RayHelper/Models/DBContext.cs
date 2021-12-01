@@ -14,5 +14,12 @@ namespace RayHelper.Models
             var hospices = JsonConvert.DeserializeObject<List<Hospice>>(await json.ConfigureAwait(false));
             return hospices;
         }
+        
+        public async Task<List<User>> GetUsers()
+        {
+            var json = _client.GetStringAsync("http://rayhelper.westeurope.cloudapp.azure.com/api/User");
+            var users = JsonConvert.DeserializeObject<List<User>>(await json.ConfigureAwait(false));
+            return users;
+        }
     }
 }

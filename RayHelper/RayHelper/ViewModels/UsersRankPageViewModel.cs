@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using RayHelper.Models;
@@ -43,6 +44,8 @@ namespace RayHelper.ViewModels
                                 Rank = 10
                             }
                         };
+            //TODO add image source if prop is empty
+            //users.Where(u=>string.IsNullOrWhiteSpace(u.ImageSource))
             users.Sort();
             Users = new ObservableCollection<User>(users);
 
@@ -51,9 +54,23 @@ namespace RayHelper.ViewModels
 
         protected override string ClassName => nameof(UsersRankPageViewModel);
 
-        private void LoadData()
+        private async void LoadData()
         {
-            //TODO
+            try
+            {
+                var users = await DbContext.GetUsers().ConfigureAwait(false);
+                
+                foreach (var user in users)
+                {
+                    Users.Add(user);
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Add($"Class name: {ClassName}," +
+                        $"Method: {nameof(LoadData)}," +
+                        $"Error: {e}");
+            }
         }
     }
 }

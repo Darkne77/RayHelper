@@ -18,13 +18,9 @@ namespace RayHelper.ViewModels
         
         public IMvxAsyncCommand<Hospice> OpenHospiceProfileCommand { get; }
 
-        private readonly DbContext _dbContext;
-        
         public HospiceListPageViewModel()
         {
             OpenHospiceProfileCommand = new MvxAsyncCommand<Hospice>(OpenHospiceProfileAsync);
-
-            _dbContext = new DbContext();
 
             //TODO Return back after refactor in Web service
             //LoadData();
@@ -145,7 +141,7 @@ namespace RayHelper.ViewModels
         {
             try
             {
-                var hospices = await _dbContext.GetHospices().ConfigureAwait(false);
+                var hospices = await DbContext.GetHospices().ConfigureAwait(false);
                 
                 foreach (var hospice in hospices)
                 {
