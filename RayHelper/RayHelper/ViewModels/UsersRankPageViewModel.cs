@@ -15,6 +15,8 @@ namespace RayHelper.ViewModels
             set => SetProperty(ref _users, value);
         }
 
+        private const string DefaultImageSource = "https://thumb.cloud.mail.ru/weblink/thumb/xw1/ttUm/GJmToF8nj/defaultUser.png";
+        
         public UsersRankPageViewModel()
         {
             var users = new List<User>()
@@ -44,8 +46,10 @@ namespace RayHelper.ViewModels
                                 Rank = 10
                             }
                         };
-            //TODO add image source if prop is empty
-            //users.Where(u=>string.IsNullOrWhiteSpace(u.ImageSource))
+            foreach (var user in users.Where(u=>string.IsNullOrWhiteSpace(u.ImageSource)))
+            {
+                user.ImageSource = DefaultImageSource;
+            }
             users.Sort();
             Users = new ObservableCollection<User>(users);
 
