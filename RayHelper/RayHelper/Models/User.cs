@@ -2,10 +2,14 @@
 
 namespace RayHelper.Models
 {
-    public class User : IComparable
+    public class User : EntityBase, IComparable
     {
+        public string Email { get; set; }
+        public string Password { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string BirthDay { get; set; }
+        public string Mobile { get; set; }
         public int Rank { get; set; }
         public string FullName => $"{FirstName} {LastName}";
         public string RankText => $"{Rank} выполненых задач";

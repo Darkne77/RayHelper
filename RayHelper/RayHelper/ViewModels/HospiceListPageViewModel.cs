@@ -42,7 +42,7 @@ namespace RayHelper.ViewModels
                                    EMail = "dubowaya.rosha@yandex.ru",
                                    Mobile = "+7(967)1382161",
                                    Website = "https://vk.com/priutme",
-                                   Photo = "https://thumb.cloud.mail.ru/weblink/thumb/xw1/H1Bp/Yu9jkCG8P",
+                                   ImageSource = "https://thumb.cloud.mail.ru/weblink/thumb/xw1/H1Bp/Yu9jkCG8P",
                                    Details = "Сообщество помощи собакам в приюте на Дубовой роще.\r\n📍 Москва\r\n\r\n• Здесь можно узнать о непростой жизни собак, и попробовать сделать её чуть лучше.\r\n\r\nПриют был создан в 2008 году и насчитывает около 900 собак.\r\nВ приюте много не социализированных собак, которые нуждаются в нашем с вами внимании.\r\n👋🏻 Вступайте к нам в группу, будем рады новым волонтерам.\r\nДля получения оперативной информации пишите админам.\r\n___________________________________\r\n\r\n☝🏻 «ВНИМАНИЕ-ВНИМАНИЕ»\r\n\r\nОбращение к тем, кто оставляет у ворот собаку и со спокойной совестью уходит(!)\r\n\r\nРебята, приют муниципальный.\r\n\r\nЭто значит, что животные попадают в приют в результате государственного отлова. Никто из руководства никогда не будет возиться с оставленными в приюте собаками, не говоря уже о щенках, для которых в приюте нет условий.\r\nЛюди, кто вот так приносит животных, таким жестом просто перекладывают их на чужие плечи. Без всякой совести, не оставляя никаких средств, никак не участвуя.\r\nЕсли бы не наши волонтеры, то эти животные так бы и находились, замерзая у приютского забора.\r\nПоэтому,прежде чем сделать как вы считаете\r\nдоброе и благородное дело\r\nподумайте 100 раз , а действительно ли это так."
                                },
                                new Hospice()
@@ -57,7 +57,7 @@ namespace RayHelper.ViewModels
                                    EMail = "redpine@bk.ru",
                                    Mobile = "+7(963)7677957",
                                    Website = "http://priut-ks.ru/",
-                                   Photo = "https://cloud.mail.ru/public/6A3y/kgU8fJTp5",
+                                   ImageSource = "https://cloud.mail.ru/public/6A3y/kgU8fJTp5",
                                    Details = "..."
                                },
                                new Hospice()
@@ -72,7 +72,7 @@ namespace RayHelper.ViewModels
                                    EMail = "drug-sobaka@yandex.ru",
                                    Mobile = "+7(916)5306494",
                                    Website = "https://drug-sobaka.ru/",
-                                   Photo = "https://cloud.mail.ru/public/eiS3/AhafRvfCZ",
+                                   ImageSource = "https://cloud.mail.ru/public/eiS3/AhafRvfCZ",
                                    Details = "..."
                                },
                                new Hospice()
@@ -87,7 +87,7 @@ namespace RayHelper.ViewModels
                                    EMail = "priutvao@gmail.com",
                                    Mobile = "+7(965)2604135",
                                    Website = "https://vao-priut.info/",
-                                   Photo = "https://cloud.mail.ru/public/WY6Z/k7q6HsCBZ",
+                                   ImageSource = "https://cloud.mail.ru/public/WY6Z/k7q6HsCBZ",
                                    Details = "..."
                                },
                                new Hospice()
@@ -102,7 +102,7 @@ namespace RayHelper.ViewModels
                                    EMail = "sobaka@izpriuta.ru",
                                    Mobile = "+7(963)3319548",
                                    Website = "https://izpriuta.ru/",
-                                   Photo = "https://cloud.mail.ru/public/fGn9/mMtH4rpfb",
+                                   ImageSource = "https://cloud.mail.ru/public/fGn9/mMtH4rpfb",
                                    Details = "..."
                                },
                                new Hospice()
@@ -117,7 +117,7 @@ namespace RayHelper.ViewModels
                                    EMail = "-",
                                    Mobile = "+7(905)5523195",
                                    Website = "http://sobaka-uzao.ru/",
-                                   Photo = "https://cloud.mail.ru/public/6eg6/FJnNVMKX4",
+                                   ImageSource = "https://cloud.mail.ru/public/6eg6/FJnNVMKX4",
                                    Details = "..."
                                },
                                new Hospice()
@@ -132,7 +132,7 @@ namespace RayHelper.ViewModels
                                    EMail = "mail@odinpriut.ru",
                                    Mobile = "+7(915)1640103",
                                    Website = "https://odinpriut.ru/",
-                                   Photo = "https://cloud.mail.ru/public/VjmZ/jTpejjbtj",
+                                   ImageSource = "https://cloud.mail.ru/public/VjmZ/jTpejjbtj",
                                    Details = "..."
                                }
                            };
