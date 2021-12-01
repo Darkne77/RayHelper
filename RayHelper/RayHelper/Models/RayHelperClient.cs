@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace RayHelper.Models
 {
-    public class DbContext
+    public class RayHelperClient
     { 
         private readonly HttpClient _client = new HttpClient(); 
         public async Task<List<Hospice>> GetHospices()

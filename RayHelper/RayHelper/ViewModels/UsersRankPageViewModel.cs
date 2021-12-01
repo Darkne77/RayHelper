@@ -62,7 +62,7 @@ namespace RayHelper.ViewModels
         {
             try
             {
-                var users = await DbContext.GetUsers().ConfigureAwait(false);
+                var users = await RayHelperClient.GetUsers().ConfigureAwait(false);
                 
                 foreach (var user in users)
                 {

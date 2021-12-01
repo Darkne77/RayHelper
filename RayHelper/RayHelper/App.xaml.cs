@@ -26,7 +26,7 @@ namespace RayHelper
         {
             Mvx.IoCProvider.RegisterSingleton(new AuthorizationService());
             Mvx.IoCProvider.RegisterSingleton(new Logger());
-            Mvx.IoCProvider.RegisterSingleton(new DbContext());
+            Mvx.IoCProvider.RegisterSingleton(new RayHelperClient());
         }
 
         protected override void OnStart()

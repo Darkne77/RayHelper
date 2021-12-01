@@ -141,7 +141,7 @@ namespace RayHelper.ViewModels
         {
             try
             {
-                var hospices = await DbContext.GetHospices().ConfigureAwait(false);
+                var hospices = await RayHelperClient.GetHospices().ConfigureAwait(false);
                 
                 foreach (var hospice in hospices)
                 {
