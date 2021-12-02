@@ -1,6 +1,8 @@
-﻿namespace RayHelper.Models
+﻿using System;
+
+namespace RayHelper.Models
 {
-    public class Hospice : EntityBase
+    public class Hospice : EntityBase, IComparable
     {
         public string Name { get; set; }
         public string City { get; set; }
@@ -18,5 +20,25 @@
         public string Address => string.IsNullOrWhiteSpace(Metro) 
                                      ? $"{City}, {Street}, {HouseNumber}" 
                                      : $"{City}, {Street}, {HouseNumber}, {Metro}";
+
+        public int CompareTo(object obj)
+        {
+            var hospice = (Hospice) obj;
+            if (String.CompareOrdinal(this.City,hospice.City) == 0)
+            {
+                if (String.CompareOrdinal(this.Street,hospice.Street) == 0)
+                {
+                    return String.CompareOrdinal(this.HouseNumber,hospice.HouseNumber);
+                }
+                else
+                {
+                    return String.CompareOrdinal(this.Street,hospice.Street);
+                }
+            }
+            else
+            {
+                return String.CompareOrdinal(this.City, hospice.City);
+            }
+        }
     }
 }

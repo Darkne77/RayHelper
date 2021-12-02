@@ -23,7 +23,7 @@ namespace RayHelper.Models
             if (this.Rank > user.Rank)
                 return -1;
             else
-                return String.Compare(this.LastName,user.LastName);;
+                return String.Compare(this.LastName,user.LastName);
         }
     }
 }
