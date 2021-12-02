@@ -10,14 +10,14 @@ namespace RayHelper.Models
         private readonly HttpClient _client = new HttpClient(); 
         public async Task<List<Hospice>> GetHospices()
         {
-            var json = _client.GetStringAsync("http://rayhelper.westeurope.cloudapp.azure.com/api/Hospice");
+            var json = _client.GetStringAsync("http://rayserver.westeurope.cloudapp.azure.com/api/Hospice");
             var hospices = JsonConvert.DeserializeObject<List<Hospice>>(await json.ConfigureAwait(false));
             return hospices;
         }
         
         public async Task<List<User>> GetUsers()
         {
-            var json = _client.GetStringAsync("http://rayhelper.westeurope.cloudapp.azure.com/api/User");
+            var json = _client.GetStringAsync("http://rayserver.westeurope.cloudapp.azure.com/api/User");
             var users = JsonConvert.DeserializeObject<List<User>>(await json.ConfigureAwait(false));
             return users;
         }
