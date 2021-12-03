@@ -62,7 +62,7 @@
     <ConsolePause>false</ConsolePause>
     <CodesignKey>Apple Development: rumiantsev.l@gmail.com (ZPLCK7PD5N)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>iOS Team Provisioning Profile: com.madi.RayHelper</CodesignProvision>
+    <CodesignProvision>iOS Team Provisioning Profile: ru.madi.RayHelper</CodesignProvision>
     <MtouchLink>SdkOnly</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
