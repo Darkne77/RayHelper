@@ -17,9 +17,22 @@ namespace RayHelper.Models
         public string ImageSource { get; set; }
         public string Details { get; set; }
 
-        public string Address => string.IsNullOrWhiteSpace(Metro) 
-                                     ? $"{City}, {Street}, {HouseNumber}" 
-                                     : $"{City}, {Street}, {HouseNumber}, {Metro}";
+        public string Address
+        {
+            get
+            {
+                var address = $"{City}, {Street}";
+                if (!string.IsNullOrWhiteSpace(HouseNumber))
+                {
+                    address += $", {HouseNumber}";
+                }
+                if (!string.IsNullOrWhiteSpace(Metro))
+                {
+                    address += $", м. {Metro}";
+                }
+                return address;
+            }
+        }
 
         public int CompareTo(object obj)
         {
