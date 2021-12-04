@@ -35,10 +35,16 @@ namespace RayHelper.ViewModels
         {
             var location = new Location(_hospice.Latitude, _hospice.Longitude);
             var options =  new MapLaunchOptions { Name = _hospice.Name };
+            var placemark = new Placemark()
+            {
+                CountryName = "Russia",
+                Locality = _hospice.City,
+                Thoroughfare = $"{_hospice.Street} {_hospice.HouseNumber}"
+            };
 
             try
             {
-                await Map.OpenAsync(location, options);
+                await Map.OpenAsync(placemark, options);
             }
             catch (Exception e)
             {
