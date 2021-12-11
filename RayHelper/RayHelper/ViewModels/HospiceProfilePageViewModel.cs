@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using MvvmCross.Commands;
-using RayHelper.Models;
+using RayHelper.Models.Entities;
 using Xamarin.Essentials;
 
 namespace RayHelper.ViewModels
@@ -10,6 +10,8 @@ namespace RayHelper.ViewModels
     {
         private readonly Hospice _hospice;
         
+        private const string Country = "Russia";
+
         public HospiceProfilePageViewModel(Hospice hospice)
         {
             _hospice = hospice;
@@ -20,7 +22,7 @@ namespace RayHelper.ViewModels
         }
 
         protected override string ClassName => nameof(HospiceProfilePageViewModel);
-        
+
         public string Title => _hospice.Name;
         public string Phone => $"Тел.: {_hospice.Mobile}";
         public string Address => _hospice.Address;
@@ -33,11 +35,11 @@ namespace RayHelper.ViewModels
 
         private async Task OpenLocationOnMapAsync()
         {
-            var location = new Location(_hospice.Latitude, _hospice.Longitude);
+            //var location = new Location(_hospice.Latitude, _hospice.Longitude);
             var options =  new MapLaunchOptions { Name = _hospice.Name };
             var placemark = new Placemark()
             {
-                CountryName = "Russia",
+                CountryName = Country,
                 Locality = _hospice.City,
                 Thoroughfare = $"{_hospice.Street} {_hospice.HouseNumber}"
             };

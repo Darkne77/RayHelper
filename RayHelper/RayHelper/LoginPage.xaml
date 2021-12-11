@@ -19,12 +19,14 @@
                 <Entry ClearButtonVisibility="WhileEditing"
                        IsSpellCheckEnabled="False"
                        Placeholder="Логин"
-                       Margin="15,0,15,15"/>
+                       Margin="15,0,15,15"
+                       Text="{Binding Login, Mode=TwoWay}"/>
                 <Entry ClearButtonVisibility="WhileEditing"
                        IsSpellCheckEnabled="False"
                        IsPassword="True"
                        Placeholder="Пароль"
-                       Margin="15,0,15,15"/>
+                       Margin="15,0,15,15"
+                       Text="{Binding Password, Mode=TwoWay}"/>
             </StackLayout>
             <Button Text="Войти"
                     Style="{StaticResource EntryButtonStyle}"

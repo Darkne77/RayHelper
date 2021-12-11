@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace RayHelper.Models
+namespace RayHelper.Models.Entities
 {
     public class User : EntityBase, IComparable
     {
         public string Email { get; set; }
-        public string Password { get; set; }
+        public string Token { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string BirthDay { get; set; }

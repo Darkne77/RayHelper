@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using RayHelper.Models;
+using RayHelper.Models.Entities;
 
 namespace RayHelper.ViewModels
 {

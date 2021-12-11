@@ -13,6 +13,7 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
+            <!-- TODO split on different files -->
             <!-- Show if user is authorized -->
             <StackLayout VerticalOptions="CenterAndExpand"
                          HorizontalOptions="Fill">

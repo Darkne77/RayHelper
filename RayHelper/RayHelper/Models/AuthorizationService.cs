@@ -1,7 +1,9 @@
-﻿namespace RayHelper.Models
+﻿using RayHelper.Models.Entities;
+
+namespace RayHelper.Models
 {
     public class AuthorizationService
     {
-        public bool IsUserAuthorized { get; set; }
+        public User AuthorizedUser { get; set; }
     }
 }

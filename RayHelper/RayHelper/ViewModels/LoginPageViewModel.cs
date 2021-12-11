@@ -1,7 +1,7 @@
+using System;
 using System.Threading.Tasks;
 using MvvmCross;
 using MvvmCross.Commands;
-using RayHelper.Models;
 using Xamarin.Forms;
 
 namespace RayHelper.ViewModels
@@ -16,6 +16,19 @@ namespace RayHelper.ViewModels
 
         protected override string ClassName => nameof(LoginPageViewModel);
 
+        private string _login;
+        public string Login
+        {
+            get => _login;
+            set => SetProperty(ref _login, value);
+        }
+        
+        private string _password;
+        public string Password
+        {
+            get => _password;
+            set => SetProperty(ref _password, value);
+        }
         public IMvxAsyncCommand OpenMainPageCommand { get; }
         public IMvxAsyncCommand AuthorizeUserCommand { get; }
 
@@ -26,8 +39,19 @@ namespace RayHelper.ViewModels
         
         private async Task AuthorizeUserAsync()
         {
-            IsUserAuthorized = true;
-            Application.Current.MainPage = new RayMainPage();
+            try
+            {
+                var user = await RayHelperClient.Login(_login, _password);
+                AuthorizationService.AuthorizedUser = user;
+                
+                Application.Current.MainPage = new RayMainPage();
+            }
+            catch (Exception e)
+            {
+                Log.Add($"Class name: {ClassName}," +
+                        $"Method: {nameof(AuthorizeUserAsync)}," +
+                        $"Error: {e}");
+            }
         }
     }
 }

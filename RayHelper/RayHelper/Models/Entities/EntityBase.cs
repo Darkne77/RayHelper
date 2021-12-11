@@ -1,4 +1,4 @@
-namespace RayHelper.Models
+namespace RayHelper.Models.Entities
 {
     public class EntityBase
     {

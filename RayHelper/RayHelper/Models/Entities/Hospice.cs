@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RayHelper.Models
+namespace RayHelper.Models.Entities
 {
     public class Hospice : EntityBase, IComparable
     {
