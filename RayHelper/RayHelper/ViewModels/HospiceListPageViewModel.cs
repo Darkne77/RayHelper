@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using MvvmCross.Commands;
 using RayHelper.Models.Entities;
+using Xamarin.Essentials;
 
 namespace RayHelper.ViewModels
 {
@@ -35,11 +36,15 @@ namespace RayHelper.ViewModels
                 var hospices = await RayHelperClient.GetHospices().ConfigureAwait(false);
                 
                 hospices.Sort();
-
-                foreach (var hospice in hospices)
+                
+                //TODO fix it
+                MainThread.BeginInvokeOnMainThread(() =>
                 {
-                    Hospices.Add(hospice);
-                }
+                    foreach (var hospice in hospices)
+                    {
+                        Hospices.Add(hospice);
+                    }
+                });
             }
             catch (Exception e)
             {
