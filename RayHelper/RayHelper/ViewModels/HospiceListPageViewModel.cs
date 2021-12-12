@@ -22,29 +22,28 @@ namespace RayHelper.ViewModels
         public HospiceListPageViewModel()
         {
             OpenHospiceProfileCommand = new MvxAsyncCommand<Hospice>(OpenHospiceProfileAsync);
-
             Hospices = new ObservableCollection<Hospice>();
-            GetHospices();
+            LoadData();
+        }
+
+        private async void LoadData()
+        {
+            var hospices = await GetHospices();
+            foreach (var hospice in hospices)
+            {
+                Hospices.Add(hospice);
+            }
         }
 
         protected override string ClassName => nameof(HospiceListPageViewModel);
 
-        private async void GetHospices()
+        private async Task<List<Hospice>> GetHospices()
         {
             try
             {
                 var hospices = await RayHelperClient.GetHospices().ConfigureAwait(false);
-                
                 hospices.Sort();
-                
-                //TODO fix it
-                MainThread.BeginInvokeOnMainThread(() =>
-                {
-                    foreach (var hospice in hospices)
-                    {
-                        Hospices.Add(hospice);
-                    }
-                });
+                return hospices;
             }
             catch (Exception e)
             {

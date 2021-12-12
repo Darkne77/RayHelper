@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RayHelper.Models.Entities;
@@ -16,15 +17,15 @@ namespace RayHelper.Models
         private const string BaseUrl = "http://rayserver.westeurope.cloudapp.azure.com";
         public async Task<List<Hospice>> GetHospices()
         {
-            var json = _client.GetStringAsync($"{BaseUrl}/api/Hospices");
-            var hospices = JsonConvert.DeserializeObject<List<Hospice>>(await json.ConfigureAwait(false));
+            var json = await _client.GetStringAsync($"{BaseUrl}/api/Hospices").ConfigureAwait(false);
+            var hospices = JsonConvert.DeserializeObject<List<Hospice>>(json);
             return hospices;
         }
         
         public async Task<List<User>> GetUsers()
         {
-            var json = _client.GetStringAsync($"{BaseUrl}/api/Users");
-            var users = JsonConvert.DeserializeObject<List<User>>(await json.ConfigureAwait(false));
+            var json = await _client.GetStringAsync($"{BaseUrl}/api/Users").ConfigureAwait(false);
+            var users = JsonConvert.DeserializeObject<List<User>>(json);
             return users;
         }
         
@@ -36,8 +37,8 @@ namespace RayHelper.Models
                                  Password = password
                              };
             var content = new StringContent(JsonConvert.SerializeObject(loginModel), Encoding.UTF8, "application/json");
-            var response = await _client.PostAsync($"{BaseUrl}/api/Users/authenticate", content);
-            var user = JsonConvert.DeserializeObject<User>(await response.Content.ReadAsStringAsync());
+            var response = await _client.PostAsync($"{BaseUrl}/api/Users/authenticate", content).ConfigureAwait(false);
+            var user = JsonConvert.DeserializeObject<User>(await response.Content.ReadAsStringAsync().ConfigureAwait(false));
             return user;
             
         }
