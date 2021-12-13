@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using MvvmCross.Commands;
 using RayHelper.Models.Entities;
@@ -37,7 +39,7 @@ namespace RayHelper.ViewModels
 
         protected override string ClassName => nameof(HospiceListPageViewModel);
 
-        private async Task<List<Hospice>> GetHospices()
+        private async Task<IEnumerable<Hospice>> GetHospices()
         {
             try
             {
@@ -51,6 +53,7 @@ namespace RayHelper.ViewModels
                         $"Method: {nameof(GetHospices)}," +
                         $"Error: {e}");
             }
+            return Enumerable.Empty<Hospice>();
         }
 
         private async Task OpenHospiceProfileAsync(Hospice hospice)

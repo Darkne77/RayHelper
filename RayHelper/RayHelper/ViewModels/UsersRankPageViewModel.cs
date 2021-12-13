@@ -35,7 +35,7 @@ namespace RayHelper.ViewModels
 
         protected override string ClassName => nameof(UsersRankPageViewModel);
 
-        private async Task<List<User>> GetUsers()
+        private async Task<IEnumerable<User>> GetUsers()
         {
             try
             {
@@ -53,6 +53,7 @@ namespace RayHelper.ViewModels
                         $"Method: {nameof(GetUsers)}," +
                         $"Error: {e}");
             }
+            return Enumerable.Empty<User>();
         }
     }
 }
