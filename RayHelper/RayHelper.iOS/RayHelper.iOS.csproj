@@ -128,7 +128,6 @@
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\search.imageset\search.pdf" />
     <InterfaceDefinition Include="LoadScreen.storyboard" />
-    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
@@ -148,6 +147,9 @@
       <Project>{A55E4DA1-72B9-40CD-822C-CA2C0D8155DB}</Project>
       <Name>RayHelper</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
