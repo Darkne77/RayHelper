@@ -1,4 +1,4 @@
-## RayHelper
+## Помощник Рэй
 MVP мобильного приложения для фонда помощи бездомным животным [Рэй](https://rayfund.ru/).
 
 <img src="Content/ray_screen.gif" alt="screen_preview" width="300"/>
