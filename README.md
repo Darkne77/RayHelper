@@ -10,5 +10,5 @@
 </p>
 
 ## Архитектура МП
-
+Web service можно найти [тут](https://github.com/Darkne77/RayWebAPI).
 <img src="Content/app_arch.png" alt="app_arch.png" width="800"/>
